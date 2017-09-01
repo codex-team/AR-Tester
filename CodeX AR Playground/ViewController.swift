@@ -23,7 +23,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         sceneView.autoenablesDefaultLighting = true
-        sceneView.debugOptions  = [.showConstraints, .showLightExtents, ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        
+        sceneView.debugOptions  = [.showLightExtents, ARSCNDebugOptions.showFeaturePoints]
         sceneView.automaticallyUpdatesLighting = true
         
         // Create a new scene
@@ -32,19 +33,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.scene = scene
     }
     
-    func addNewShip(position: SCNVector3) {
+    func addIpad(position: SCNVector3, anchor: ARPlaneAnchor) {
         
         let sceneIpad = SCNScene(named: "art.scnassets/iPad.scn")
         
         let planeNode = SCNNode(geometry: sceneIpad?.rootNode.childNode(withName: "iPad", recursively: false)?.geometry)
         
-        planeNode.scale = SCNVector3Make(0.001, 0.001, 0.001);
-        planeNode.eulerAngles.y = sceneView.pointOfView!.eulerAngles.y
-        planeNode.eulerAngles.x = sceneView.pointOfView!.eulerAngles.x
-        planeNode.eulerAngles.z = sceneView.pointOfView!.eulerAngles.z
-        planeNode.position = SCNVector3Make(position.x, position.y, position.z)
+        // Create the geometry and its materials
+        _ = SCNPlane(width: CGFloat(anchor.extent.x), height: CGFloat(anchor.extent.z))
         
-        sceneView.scene.rootNode.addChildNode(planeNode)
+        planeNode.scale = SCNVector3Make(0.001, 0.001, 0.001);
+//        planeNode.eulerAngles.y = sceneView.pointOfView!.eulerAngles.y
+//        planeNode.eulerAngles.x = sceneView.pointOfView!.eulerAngles.x
+//        planeNode.eulerAngles.z = sceneView.pointOfView!.eulerAngles.z
+        
+        planeNode.position = SCNVector3Make(position.x, position.y, position.z)
+//        planeNode.pivot = SCNMatrix4MakeRotation(Float.pi / 2, planeNode.eulerAngles.x, planeNode.eulerAngles.y, planeNode.eulerAngles.z)
+        
+//        sceneView.scene.rootNode.addChildNode(planeNode)
         
 //        let planeNode = SCNNode(geometry: textNode)
 //        planeNode.scale = SCNVector3Make(0.05, 0.05, 0.05);
@@ -64,12 +70,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         debugPrint("touchesBegan")
         
         guard let touch = touches.first else { return }
+        
         let results = sceneView.hitTest(touch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
+        
         guard let hitFeature = results.last else { return }
         let hitTransform = SCNMatrix4(hitFeature.worldTransform)
         let hitPosition = SCNVector3Make(hitTransform.m41, hitTransform.m42, hitTransform.m43)
         
-        addNewShip(position: hitPosition)
+//        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+//        addIpad(position: hitPosition, anchor: planeAnchor)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,6 +86,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        
+        configuration.planeDetection = .horizontal
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -93,30 +104,50 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
+    
+    // When a plane is detected, make a planeNode for it
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        
+        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        
+        debugPrint(planeAnchor)
+        
+//        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+//
+//        let lavaImage = UIImage(named: "lava-0.png")
+//        let lavaMaterial = SCNMaterial()
+//        lavaMaterial.diffuse.contents = lavaImage
+//        lavaMaterial.isDoubleSided = true
+//
+//        plane.materials = [lavaMaterial]
+//
+//        let planeNode = SCNNode(geometry: plane)
+//        planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+//        planeNode.transform = SCNMatrix4MakeRotation(-Float.pi / 2, 1, 0, 0)
+//
+//        let box = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0)
+//        box.firstMaterial?.diffuse.contents = UIColor.blue
+//        box.firstMaterial?.transparency = 1
+//        box.firstMaterial?.isDoubleSided = true
+//
+//        let boxNode = SCNNode(geometry: box)
+//        boxNode.position = SCNVector3(0,0.25,0)
+//
+        let sceneIpad = SCNScene(named: "art.scnassets/r8_gt_obj/r8_gt_obj.scn")
+        let ipadNode = SCNNode(geometry: sceneIpad?.rootNode.childNode(withName: "r8_gt_obj", recursively: false)?.geometry)
+//        let ipadNode = SCNNode(geometry: sceneIpad?.rootNode.geometry)
+        //ipadNode.scale = SCNVector3Make(0.001, 0.001, 0.001)
+        ipadNode.position = SCNVector3(0,0,0)
+//        ipadNode.transform = SCNMatrix4MakeRotation(-Float.pi, 0, 1, 0)
+        
+//        sceneView.scene.rootNode.addChildNode(boxNode)
+//        node.addChildNode(planeNode)
+        node.addChildNode(ipadNode)
+//        node.addChildNode(boxNode)
+        
+//        let planeNode = createPlaneNode(anchor: planeAnchor)
+//         ARKit owns the node corresponding to the anchor, so make the plane a child node.
+//        node.addChildNode(planeNode)
+    }
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
-    }
 }
