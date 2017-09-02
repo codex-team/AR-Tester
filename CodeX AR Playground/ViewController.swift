@@ -9,14 +9,21 @@
 import UIKit
 import SceneKit
 import ARKit
+import WebKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
+    var webView: WKWebView!
+    
+    var shadowView : UIView!
+    
+    let iPadFrameSize = CGRect(x: 0.0, y: 0.0, width: 768.0, height: 1024.0)
     
     var lastPlaneNode: SCNNode?
     var lastAnchor: UUID?
     var iPadUUID: UUID?
+    var currentImage: UIImage?
     
     var iPadScene: SCNScene?
     
@@ -51,8 +58,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         tap.addTarget(self, action: #selector(didTap))
         sceneView.addGestureRecognizer(tap)
         
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.navigationDelegate = self
+        
+        shadowView = webView
+        
         // Set the scene to the view
         sceneView.scene = scene
+    }
+    
+    func loadImage()
+    {
+        let myURL = URL(string: "https://ifmo.su")
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
     }
     
     @objc func didTap( _ sender: UITapGestureRecognizer) {
@@ -93,13 +113,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         } else {
             iPad = (iPadScene?.rootNode.childNode(withName: "iPad", recursively: true))!
         }
-        iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = UIImage(named: "art.scnassets/lava-0.png")
-        
+        changeImage()
 //        debugPrint(iPad?.geometry?.material(named: "Mat_3"))
 //        debugPrint(iPad?.geometry?.material(named: "screen")?.diffuse.contents)
         
         iPad?.position = position
         node.addChildNode(iPad!)
+    }
+    
+    func changeImage()
+    {
+        print("!!!!!")
+        debugPrint(currentImage)
+        iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = currentImage
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -188,5 +214,31 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         lastPlaneNode = planeNode
         node.addChildNode(planeNode)
         
+    }
+}
+
+extension ViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+        print("Webview did finish loading")
+        
+        let image = screenShot()
+        self.currentImage = image
+        currentImage = image
+    }
+    
+    func screenShot( ) -> UIImage {
+        
+        debugPrint(self.shadowView.frame)
+        UIGraphicsBeginImageContextWithOptions(self.shadowView.frame.size, true, 1.0)
+        
+        let context = UIGraphicsGetCurrentContext()!
+        
+        self.shadowView.layer.render(in: context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image!
     }
 }
