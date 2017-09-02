@@ -28,16 +28,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.automaticallyUpdatesLighting = true
         
         // Create a new scene
-        let scene = SCNScene()
+        let scene = SCNScene(named: "art.scnassets/ship.scn")
+        
         // Set the scene to the view
-        sceneView.scene = scene
+        sceneView.scene = scene!
     }
     
     func addIpad(position: SCNVector3, anchor: ARPlaneAnchor) {
         
-        let sceneIpad = SCNScene(named: "art.scnassets/iPad.scn")
+        let sceneIpad = SCNScene(named: "art.scnassets/ship.scn")
         
-        let planeNode = SCNNode(geometry: sceneIpad?.rootNode.childNode(withName: "iPad", recursively: false)?.geometry)
+        let planeNode = SCNNode(geometry: sceneIpad?.rootNode.childNode(withName: "MDL_OBJ_cup_500k", recursively: false)?.geometry)
         
         // Create the geometry and its materials
         _ = SCNPlane(width: CGFloat(anchor.extent.x), height: CGFloat(anchor.extent.z))
@@ -59,10 +60,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //        planeNode.eulerAngles.z = sceneView.pointOfView!.eulerAngles.z
         
         sceneView.scene.rootNode.addChildNode(planeNode)
-    }
-    
-    func floatBetween(_ first: Float,  and second: Float) -> Float { // random float between upper and lower bound (inclusive)
-        return (Float(arc4random()) / Float(UInt32.max)) * (first - second) + second
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -112,18 +109,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         debugPrint(planeAnchor)
         
-//        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+        
+        
+        let lavaImage = UIImage(named: "art.scnassets/screen_big.jpg")
+        let lavaMaterial = SCNMaterial()
+        lavaMaterial.diffuse.contents = lavaImage
+        lavaMaterial.isDoubleSided = true
 //
-//        let lavaImage = UIImage(named: "lava-0.png")
-//        let lavaMaterial = SCNMaterial()
-//        lavaMaterial.diffuse.contents = lavaImage
-//        lavaMaterial.isDoubleSided = true
+        plane.materials = [lavaMaterial]
 //
-//        plane.materials = [lavaMaterial]
-//
-//        let planeNode = SCNNode(geometry: plane)
-//        planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
-//        planeNode.transform = SCNMatrix4MakeRotation(-Float.pi / 2, 1, 0, 0)
+        let planeNode = SCNNode(geometry: plane)
+        planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+        planeNode.transform = SCNMatrix4MakeRotation(-Float.pi / 2, 1, 0, 0)
 //
 //        let box = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0)
 //        box.firstMaterial?.diffuse.contents = UIColor.blue
@@ -133,16 +131,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 //        let boxNode = SCNNode(geometry: box)
 //        boxNode.position = SCNVector3(0,0.25,0)
 //
-        let sceneIpad = SCNScene(named: "art.scnassets/r8_gt_obj/r8_gt_obj.scn")
-        let ipadNode = SCNNode(geometry: sceneIpad?.rootNode.childNode(withName: "r8_gt_obj", recursively: false)?.geometry)
-//        let ipadNode = SCNNode(geometry: sceneIpad?.rootNode.geometry)
-        //ipadNode.scale = SCNVector3Make(0.001, 0.001, 0.001)
-        ipadNode.position = SCNVector3(0,0,0)
-//        ipadNode.transform = SCNMatrix4MakeRotation(-Float.pi, 0, 1, 0)
+//        let sceneIpad = SCNScene(named: "art.scnassets/iPad.scn")
+//        let ipadNode = SCNNode(geometry: sceneIpad?.rootNode.childNode(withName: "iPad", recursively: true)?.geometry)
         
-//        sceneView.scene.rootNode.addChildNode(boxNode)
-//        node.addChildNode(planeNode)
-        node.addChildNode(ipadNode)
+//        debugPrint(ipadNode)
+//        ipadNode.scale = SCNVector3Make(0.001, 0.001, 0.001)
+//        ipadNode.position = SCNVector3(0,0,0)
+//        ipadNode.transform = SCNMatrix3MakeRotation(-Float.pi, 0, 1, 0)
+        
+        node.addChildNode(planeNode)
+//        node.addChildNode(ipadNode)
+//
+//        for nd1 in (node.parent?.childNodes)! {
+//            debugPrint("This is child -")
+//            debugPrint(nd1)
+//            debugPrint(nd1.position)
+//        }
 //        node.addChildNode(boxNode)
         
 //        let planeNode = createPlaneNode(anchor: planeAnchor)
