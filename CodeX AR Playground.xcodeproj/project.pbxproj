@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20E4A411F5AEC5600938FAE /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20E4A401F5AEC5600938FAE /* SceneViewController.swift */; };
 		C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DB1F545435002BF34B /* AppDelegate.swift */; };
 		C21393DE1F545435002BF34B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393DD1F545435002BF34B /* art.scnassets */; };
 		C21393E01F545435002BF34B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DF1F545435002BF34B /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C20E4A401F5AEC5600938FAE /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 		C21393D81F545435002BF34B /* CodeX AR Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CodeX AR Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21393DB1F545435002BF34B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C21393DD1F545435002BF34B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				C21393DB1F545435002BF34B /* AppDelegate.swift */,
 				C21393DD1F545435002BF34B /* art.scnassets */,
 				C21393DF1F545435002BF34B /* ViewController.swift */,
+				C20E4A401F5AEC5600938FAE /* SceneViewController.swift */,
 				C21393E11F545435002BF34B /* Main.storyboard */,
 				C21393E41F545435002BF34B /* Assets.xcassets */,
 				C21393E61F545435002BF34B /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20E4A411F5AEC5600938FAE /* SceneViewController.swift in Sources */,
 				C21393E01F545435002BF34B /* ViewController.swift in Sources */,
 				C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */,
 			);
