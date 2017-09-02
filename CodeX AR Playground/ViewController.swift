@@ -15,6 +15,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var sceneView: ARSCNView!
     
     var lastPlaneNode: SCNNode?
+    var lastAnchor: UUID?
+    var iPadUUID: UUID?
+    
+    var iPadScene: SCNScene?
+    
+    var iPad: SCNNode?
     
     var currentPlane:SCNNode? {
         didSet {
@@ -36,7 +42,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.automaticallyUpdatesLighting = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
+        
+        // load scenes
+        iPadScene = SCNScene(named: "art.scnassets/ship.scn")!
         
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(didTap))
@@ -70,18 +79,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                                         types: ARHitTestResult.ResultType.existingPlaneUsingExtent)
         
         guard results.count > 0,
-            let anchor = results[0].anchor,
+            let anchor = results[0].anchor as? ARPlaneAnchor,
             let node = sceneView.node(for: anchor) else { return nil }
         
-        return (node, SCNVector3.positionFromTransform(results[0].worldTransform))
+        iPadUUID = anchor.identifier
+        return (node, SCNVector3(x: anchor.center.x, y: anchor.center.y, z: anchor.center.z))
     }
     
     func addIpad(node: SCNNode, position: SCNVector3) {
         
-        let iPad = sceneView.scene.rootNode.childNode(withName: "iPad", recursively: true)?.clone()
+        if iPad != nil {
+            node.addChildNode(iPad!)
+        } else {
+            iPad = (iPadScene?.rootNode.childNode(withName: "iPad", recursively: true))!
+        }
         
-        iPad?.position = position
         node.addChildNode(iPad!)
+        iPad?.position = position
         
     }
     
@@ -129,6 +143,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        lastAnchor = planeAnchor.identifier
         
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
 
@@ -148,6 +163,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         
+        if planeAnchor.identifier == lastAnchor {
+            return
+        }
+        
+        if planeAnchor.identifier == iPadUUID {
+            return
+        }
+        
+        lastAnchor = planeAnchor.identifier
+        
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
         
         let planeNode = SCNNode(geometry: plane)
@@ -160,12 +185,5 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         lastPlaneNode = planeNode
         node.addChildNode(planeNode)
         
-    }
-}
-
-extension SCNVector3 {
-    // from Apples demo APP
-    static func positionFromTransform(_ transform: matrix_float4x4) -> SCNVector3 {
-        return SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
     }
 }
