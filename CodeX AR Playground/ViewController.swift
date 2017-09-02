@@ -93,10 +93,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         } else {
             iPad = (iPadScene?.rootNode.childNode(withName: "iPad", recursively: true))!
         }
+        iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = UIImage(named: "art.scnassets/lava-0.png")
         
-        node.addChildNode(iPad!)
+//        debugPrint(iPad?.geometry?.material(named: "Mat_3"))
+//        debugPrint(iPad?.geometry?.material(named: "screen")?.diffuse.contents)
+        
         iPad?.position = position
-        
+        node.addChildNode(iPad!)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
