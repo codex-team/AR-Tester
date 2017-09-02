@@ -64,6 +64,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         shadowView = webView
         
+        setupShadowView()
+        loadImage()
+        
         // Set the scene to the view
         sceneView.scene = scene
     }
@@ -113,19 +116,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         } else {
             iPad = (iPadScene?.rootNode.childNode(withName: "iPad", recursively: true))!
         }
-        changeImage()
-//        debugPrint(iPad?.geometry?.material(named: "Mat_3"))
-//        debugPrint(iPad?.geometry?.material(named: "screen")?.diffuse.contents)
+        
+        iPad?.geometry?.sources(for: .texcoord)
+        iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = currentImage
         
         iPad?.position = position
         node.addChildNode(iPad!)
-    }
-    
-    func changeImage()
-    {
-        print("!!!!!")
-        debugPrint(currentImage)
-        iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = currentImage
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -166,6 +162,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
+    }
+    
+    func setupShadowView(){
+        
+        shadowView.frame = iPadFrameSize
+        
+        // Move out the screen
+        shadowView.frame.origin.x = 1000.0
+        
+        
+        view.addSubview(shadowView)
+        
     }
     
     // When a plane is detected, make a planeNode for it
@@ -224,7 +232,7 @@ extension ViewController: WKNavigationDelegate {
         print("Webview did finish loading")
         
         let image = screenShot()
-        self.currentImage = image
+        
         currentImage = image
     }
     
