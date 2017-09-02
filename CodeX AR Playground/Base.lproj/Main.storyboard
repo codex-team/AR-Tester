@@ -8,6 +8,76 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--AR Scene-->
+        <scene sceneID="wvc-SV-I0b">
+            <objects>
+                <viewController title="AR Scene" id="bwe-ti-K4y" customClass="ViewController" customModule="CodeX_AR_Playground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YDI-A0-Hyx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ga9-Sx-rqS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="vVS-8l-bfR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="AR Scene" id="tjS-7B-iPk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ecb-cT-BQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-354" y="287"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="RSk-NM-uR1">
+            <objects>
+                <viewController id="pf3-fw-S6Y" customClass="SceneViewController" customModule="CodeX_AR_Playground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aw9-Va-30z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGl-fR-goe">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </sceneKitView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iiu-LN-9NE" firstAttribute="bottom" secondItem="uGl-fR-goe" secondAttribute="bottom" id="hrK-qK-ybu"/>
+                            <constraint firstItem="iiu-LN-9NE" firstAttribute="trailing" secondItem="uGl-fR-goe" secondAttribute="trailing" id="yWY-vq-mue"/>
+                            <constraint firstItem="uGl-fR-goe" firstAttribute="leading" secondItem="iiu-LN-9NE" secondAttribute="leading" id="zAi-F2-NoW"/>
+                            <constraint firstItem="uGl-fR-goe" firstAttribute="top" secondItem="iiu-LN-9NE" secondAttribute="top" id="zch-TK-n2w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iiu-LN-9NE"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="7QO-vr-uJr"/>
+                    <connections>
+                        <outlet property="scnView" destination="uGl-fR-goe" id="x6w-cB-fzk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czn-LD-Ayl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-354.39999999999998" y="-378.26086956521743"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="39A-74-dbE">
+            <objects>
+                <tabBarController id="Ojr-Jo-bly" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aA9-Lw-thc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pf3-fw-S6Y" kind="relationship" relationship="viewControllers" id="Xom-6B-tUZ"/>
+                        <segue destination="bwe-ti-K4y" kind="relationship" relationship="viewControllers" id="lcR-3G-XhB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lB-1w-h9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1305" y="-46"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -22,6 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="386" y="19"/>
         </scene>
     </scenes>
 </document>
