@@ -20,6 +20,9 @@ class SceneViewController: UIViewController {
     
     let iPadFrameSize = CGRect(x: 0.0, y: 0.0, width: 768.0, height: 1024.0)
     
+    var device: SCNNode!
+    
+    var testingSiteURL = URL(string: "https://ifmo.su")
     
     @IBOutlet weak var scnView: SCNView!
     
@@ -46,7 +49,10 @@ class SceneViewController: UIViewController {
     func setupShadowView(){
         
         shadowView.frame = iPadFrameSize
-        shadowView.alpha = 0.0001
+        
+        // Move out the screen
+        shadowView.frame.origin.x = 1000.0
+    
         
         view.addSubview(shadowView)
         
@@ -86,7 +92,9 @@ class SceneViewController: UIViewController {
     func spawnShape () {
         let geometry: SCNGeometry = SCNBox(width: 2.5, height: 0.3, length: 3.5 , chamferRadius: 0.0)
         
-        let geometryNode = SCNNode(geometry: geometry)
+        geometry.sources(for: .texcoord)
+        
+        device = SCNNode(geometry: geometry)
         
 //        geometryNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: nil)
         
@@ -103,13 +111,13 @@ class SceneViewController: UIViewController {
         let y = Float(arc4random()) / Float(UINT32_MAX)
         let z = Float(arc4random()) / Float(UINT32_MAX)
         
-        geometryNode.position = SCNVector3(x: x, y: y, z: z)
+        device.position = SCNVector3(x: x, y: y, z: z)
         
         let color = UIColor.blue
         geometry.materials.first?.diffuse.contents = color
         
         
-        scnScene.rootNode.addChildNode(geometryNode)
+        scnScene.rootNode.addChildNode(device)
         
         print("Start loading page")
         
@@ -119,7 +127,7 @@ class SceneViewController: UIViewController {
         
         shadowView = webView
         
-        let myURL = URL(string: "https://ifmo.su")
+        let myURL = testingSiteURL
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         
@@ -159,6 +167,10 @@ extension SceneViewController: WKNavigationDelegate {
         let image = screenShot()
         
         print(image)
+        
+//        device.geometry?.firstMaterial?.diffuse.contents = UIColor.red
+        device.geometry?.firstMaterial?.diffuse.contents = image
+        
     }
     
     func screenShot( ) -> UIImage {
