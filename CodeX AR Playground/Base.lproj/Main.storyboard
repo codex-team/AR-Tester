@@ -26,6 +26,9 @@
                         <viewLayoutGuide key="safeArea" id="vVS-8l-bfR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="AR Scene" id="tjS-7B-iPk"/>
+                    <connections>
+                        <outlet property="sceneView" destination="ga9-Sx-rqS" id="RlS-Mg-u1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecb-cT-BQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
