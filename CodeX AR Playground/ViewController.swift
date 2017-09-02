@@ -14,6 +14,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    var lastPlaneNode: SCNNode?
+    
+    var currentPlane:SCNNode? {
+        didSet {
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,52 +36,67 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.automaticallyUpdatesLighting = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")
+        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        
+        let tap = UITapGestureRecognizer()
+        tap.addTarget(self, action: #selector(didTap))
+        sceneView.addGestureRecognizer(tap)
         
         // Set the scene to the view
-        sceneView.scene = scene!
+        sceneView.scene = scene
     }
     
-    func addIpad(position: SCNVector3, anchor: ARPlaneAnchor) {
+    @objc func didTap( _ sender: UITapGestureRecognizer) {
         
-        let sceneIpad = SCNScene(named: "art.scnassets/ship.scn")
+        let location = sender.location(in: sceneView)
+        debugPrint("location")
+        debugPrint(location);
         
-        let planeNode = SCNNode(geometry: sceneIpad?.rootNode.childNode(withName: "MDL_OBJ_cup_500k", recursively: false)?.geometry)
+        guard let _ = currentPlane else {
+            guard let newPlaneData = anyPlaneFrom(location: location) else { return }
+            
+            debugPrint("New plane data")
+            debugPrint(newPlaneData)
+
+            lastPlaneNode?.removeFromParentNode()
+            addIpad(node: newPlaneData.0, position: newPlaneData.1)
+            return
+        }
         
-        // Create the geometry and its materials
-        _ = SCNPlane(width: CGFloat(anchor.extent.x), height: CGFloat(anchor.extent.z))
+    }
+    
+    private func anyPlaneFrom(location:CGPoint) -> (SCNNode, SCNVector3)? {
+        let results = sceneView.hitTest(location,
+                                        types: ARHitTestResult.ResultType.existingPlaneUsingExtent)
         
-        planeNode.scale = SCNVector3Make(0.001, 0.001, 0.001);
-//        planeNode.eulerAngles.y = sceneView.pointOfView!.eulerAngles.y
-//        planeNode.eulerAngles.x = sceneView.pointOfView!.eulerAngles.x
-//        planeNode.eulerAngles.z = sceneView.pointOfView!.eulerAngles.z
+        guard results.count > 0,
+            let anchor = results[0].anchor,
+            let node = sceneView.node(for: anchor) else { return nil }
         
-        planeNode.position = SCNVector3Make(position.x, position.y, position.z)
-//        planeNode.pivot = SCNMatrix4MakeRotation(Float.pi / 2, planeNode.eulerAngles.x, planeNode.eulerAngles.y, planeNode.eulerAngles.z)
+        return (node, SCNVector3.positionFromTransform(results[0].worldTransform))
+    }
+    
+    func addIpad(node: SCNNode, position: SCNVector3) {
         
-//        sceneView.scene.rootNode.addChildNode(planeNode)
+        let iPad = sceneView.scene.rootNode.childNode(withName: "iPad", recursively: true)?.clone()
         
-//        let planeNode = SCNNode(geometry: textNode)
-//        planeNode.scale = SCNVector3Make(0.05, 0.05, 0.05);
-//        planeNode.eulerAngles.y = sceneView.pointOfView!.eulerAngles.y
-//        planeNode.eulerAngles.x = sceneView.pointOfView!.eulerAngles.x
-//        planeNode.eulerAngles.z = sceneView.pointOfView!.eulerAngles.z
+        iPad?.position = position
+        node.addChildNode(iPad!)
         
-        sceneView.scene.rootNode.addChildNode(planeNode)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        debugPrint("touchesBegan")
-        
-        guard let touch = touches.first else { return }
-        
-        let results = sceneView.hitTest(touch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
-        
-        guard let hitFeature = results.last else { return }
-        let hitTransform = SCNMatrix4(hitFeature.worldTransform)
-        let hitPosition = SCNVector3Make(hitTransform.m41, hitTransform.m42, hitTransform.m43)
-        
+//        debugPrint("touchesBegan")
+//
+//        guard let touch = touches.first else { return }
+//
+//        let results = sceneView.hitTest(touch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
+//
+//        guard let hitFeature = results.last else { return }
+//        let hitTransform = SCNMatrix4(hitFeature.worldTransform)
+//        let hitPosition = SCNVector3Make(hitTransform.m41, hitTransform.m42, hitTransform.m43)
+//
 //        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
 //        addIpad(position: hitPosition, anchor: planeAnchor)
     }
@@ -107,51 +130,42 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         
-        debugPrint(planeAnchor)
+        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+
+        let planeNode = SCNNode(geometry: plane)
+        planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+        
+        planeNode.transform = SCNMatrix4MakeRotation(-Float.pi / 2, 1, 0, 0)
+        
+        lastPlaneNode?.removeFromParentNode()
+        
+        lastPlaneNode = planeNode
+        node.addChildNode(planeNode)
+        
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        
+        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
         
-        
-        let lavaImage = UIImage(named: "art.scnassets/screen_big.jpg")
-        let lavaMaterial = SCNMaterial()
-        lavaMaterial.diffuse.contents = lavaImage
-        lavaMaterial.isDoubleSided = true
-//
-        plane.materials = [lavaMaterial]
-//
         let planeNode = SCNNode(geometry: plane)
         planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
+        
         planeNode.transform = SCNMatrix4MakeRotation(-Float.pi / 2, 1, 0, 0)
-//
-//        let box = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0)
-//        box.firstMaterial?.diffuse.contents = UIColor.blue
-//        box.firstMaterial?.transparency = 1
-//        box.firstMaterial?.isDoubleSided = true
-//
-//        let boxNode = SCNNode(geometry: box)
-//        boxNode.position = SCNVector3(0,0.25,0)
-//
-//        let sceneIpad = SCNScene(named: "art.scnassets/iPad.scn")
-//        let ipadNode = SCNNode(geometry: sceneIpad?.rootNode.childNode(withName: "iPad", recursively: true)?.geometry)
         
-//        debugPrint(ipadNode)
-//        ipadNode.scale = SCNVector3Make(0.001, 0.001, 0.001)
-//        ipadNode.position = SCNVector3(0,0,0)
-//        ipadNode.transform = SCNMatrix3MakeRotation(-Float.pi, 0, 1, 0)
+        lastPlaneNode?.removeFromParentNode()
         
+        lastPlaneNode = planeNode
         node.addChildNode(planeNode)
-//        node.addChildNode(ipadNode)
-//
-//        for nd1 in (node.parent?.childNodes)! {
-//            debugPrint("This is child -")
-//            debugPrint(nd1)
-//            debugPrint(nd1.position)
-//        }
-//        node.addChildNode(boxNode)
         
-//        let planeNode = createPlaneNode(anchor: planeAnchor)
-//         ARKit owns the node corresponding to the anchor, so make the plane a child node.
-//        node.addChildNode(planeNode)
     }
+}
 
+extension SCNVector3 {
+    // from Apples demo APP
+    static func positionFromTransform(_ transform: matrix_float4x4) -> SCNVector3 {
+        return SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
+    }
 }
