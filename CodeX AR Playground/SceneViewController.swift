@@ -22,7 +22,8 @@ class SceneViewController: UIViewController {
     
     var device: SCNNode!
     
-    var testingSiteURL = URL(string: "https://ifmo.su")
+    var testingSiteURL = "https://ifmo.su"
+//    var testingSiteURL = "https://school332.ru"
     
     @IBOutlet weak var scnView: SCNView!
     
@@ -107,9 +108,14 @@ class SceneViewController: UIViewController {
 //                                             at: position, asImpulse: true)
 //
         
-        let x = Float(arc4random()) / Float(UINT32_MAX)
-        let y = Float(arc4random()) / Float(UINT32_MAX)
-        let z = Float(arc4random()) / Float(UINT32_MAX)
+//        let x = Float(arc4random()) / Float(UINT32_MAX)
+//        let y = Float(arc4random()) / Float(UINT32_MAX)
+//        let z = Float(arc4random()) / Float(UINT32_MAX)
+        
+        let x = Float(0)
+        let y = Float(0)
+        let z = Float(0)
+        
         
         device.position = SCNVector3(x: x, y: y, z: z)
         
@@ -127,7 +133,7 @@ class SceneViewController: UIViewController {
         
         shadowView = webView
         
-        let myURL = testingSiteURL
+        let myURL = URL(string: testingSiteURL)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         
