@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ojr-Jo-bly">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iSG-zV-FHL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,6 +33,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecb-cT-BQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-354" y="287"/>
+        </scene>
+        <!--StartScreen-->
+        <scene sceneID="nep-o9-RfR">
+            <objects>
+                <viewController title="StartScreen" id="iSG-zV-FHL" customClass="StartSceneViewController" customModule="CodeX_AR_Playground" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AKd-LV-qIx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdB-0h-brR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Codex Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qsi-wD-1F9">
+                                        <rect key="frame" x="93.5" y="100" width="188" height="188"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="188" id="8jD-vD-Xj7"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="188" id="PWJ-CV-z8d"/>
+                                            <constraint firstAttribute="width" constant="188" id="VSr-ZD-21g"/>
+                                            <constraint firstAttribute="width" constant="188" id="YQO-Do-uIo"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AR Tester" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wx-kV-nGX">
+                                        <rect key="frame" x="30" y="450" width="92" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGN-AB-D6D">
+                                        <rect key="frame" x="30" y="491" width="315" height="36"/>
+                                        <string key="text">Test your site’s layout on the devices 
+in Augmented Reallity</string>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                        <color key="textColor" red="0.55294117647058827" green="0.6588235294117647" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4m-a1-sbU">
+                                        <rect key="frame" x="30" y="542" width="315" height="20"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.63529411764705879" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" keyboardAppearance="alert" returnKeyType="continue" textContentType="url"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="X4m-a1-sbU" secondAttribute="trailing" constant="30" id="15x-8s-Ykm"/>
+                                    <constraint firstItem="1Wx-kV-nGX" firstAttribute="leading" secondItem="QdB-0h-brR" secondAttribute="leading" constant="30" id="8q7-bl-pDy"/>
+                                    <constraint firstItem="1Wx-kV-nGX" firstAttribute="top" secondItem="QdB-0h-brR" secondAttribute="top" constant="450" id="9bn-XF-dj2"/>
+                                    <constraint firstAttribute="trailing" secondItem="wGN-AB-D6D" secondAttribute="trailing" constant="30" id="CJY-tZ-7UA"/>
+                                    <constraint firstItem="wGN-AB-D6D" firstAttribute="leading" secondItem="QdB-0h-brR" secondAttribute="leading" constant="30" id="JtZ-AQ-iJJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="X4m-a1-sbU" secondAttribute="bottom" constant="30" id="KEc-kd-lc0"/>
+                                    <constraint firstItem="wGN-AB-D6D" firstAttribute="top" secondItem="1Wx-kV-nGX" secondAttribute="bottom" constant="15" id="McR-jE-H4F"/>
+                                    <constraint firstItem="X4m-a1-sbU" firstAttribute="centerX" secondItem="QdB-0h-brR" secondAttribute="centerX" id="MjH-79-Y9X"/>
+                                    <constraint firstItem="Qsi-wD-1F9" firstAttribute="centerX" secondItem="QdB-0h-brR" secondAttribute="centerX" id="Pw5-gf-RfP"/>
+                                    <constraint firstItem="X4m-a1-sbU" firstAttribute="top" secondItem="wGN-AB-D6D" secondAttribute="bottom" constant="15" id="Z22-aD-hDN"/>
+                                    <constraint firstItem="Qsi-wD-1F9" firstAttribute="top" secondItem="QdB-0h-brR" secondAttribute="top" constant="100" id="scv-bm-2t5"/>
+                                    <constraint firstItem="X4m-a1-sbU" firstAttribute="leading" secondItem="QdB-0h-brR" secondAttribute="leading" constant="30" id="zBC-Qu-Yms"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.16470588235294117" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QdB-0h-brR" firstAttribute="bottom" secondItem="brm-PL-sce" secondAttribute="bottom" id="5dk-fP-hQo"/>
+                            <constraint firstItem="QdB-0h-brR" firstAttribute="leading" secondItem="brm-PL-sce" secondAttribute="leading" id="UDZ-N7-Ev6"/>
+                            <constraint firstItem="QdB-0h-brR" firstAttribute="top" secondItem="AKd-LV-qIx" secondAttribute="top" id="VB2-ia-J00"/>
+                            <constraint firstItem="QdB-0h-brR" firstAttribute="trailing" secondItem="brm-PL-sce" secondAttribute="trailing" id="cnq-mf-BHI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="brm-PL-sce"/>
+                    </view>
+                    <connections>
+                        <outlet property="activeField" destination="X4m-a1-sbU" id="cRg-ih-yyd"/>
+                        <outlet property="scrollView" destination="QdB-0h-brR" id="JVL-n6-YfZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1J-f8-d3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1309.5999999999999" y="-729.08545727136436"/>
         </scene>
         <!--Settings-->
         <scene sceneID="RSk-NM-uR1">
@@ -99,4 +174,7 @@
             <point key="canvasLocation" x="386" y="19"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Codex Logo" width="187" height="187"/>
+    </resources>
 </document>
