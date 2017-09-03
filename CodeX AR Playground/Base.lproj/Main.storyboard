@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </arscnView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhI-mp-9eU" userLabel="OverlayView">
-                                <rect key="frame" x="30" y="488" width="315" height="100"/>
+                                <rect key="frame" x="30" y="537" width="315" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move around to find a plane" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sph-Bk-z4J">
                                         <rect key="frame" x="52" y="39.5" width="212.5" height="21"/>
@@ -96,7 +96,7 @@ in Augmented Reallity</string>
                                         <color key="textColor" red="0.55294117647058827" green="0.6588235294117647" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4m-a1-sbU">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4m-a1-sbU" userLabel="Enter Url">
                                         <rect key="frame" x="30" y="542" width="315" height="20"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.63529411764705879" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -131,59 +131,12 @@ in Augmented Reallity</string>
                     <connections>
                         <outlet property="activeField" destination="X4m-a1-sbU" id="cRg-ih-yyd"/>
                         <outlet property="scrollView" destination="QdB-0h-brR" id="JVL-n6-YfZ"/>
+                        <segue destination="bwe-ti-K4y" kind="showDetail" identifier="goCameraSegue" action="showViewController:sender:" id="EEn-n5-fae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1J-f8-d3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1309.5999999999999" y="-729.08545727136436"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="RSk-NM-uR1">
-            <objects>
-                <viewController id="pf3-fw-S6Y" customClass="SceneViewController" customModule="CodeX_AR_Playground" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aw9-Va-30z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGl-fR-goe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </sceneKitView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="iiu-LN-9NE" firstAttribute="bottom" secondItem="uGl-fR-goe" secondAttribute="bottom" id="hrK-qK-ybu"/>
-                            <constraint firstItem="iiu-LN-9NE" firstAttribute="trailing" secondItem="uGl-fR-goe" secondAttribute="trailing" id="yWY-vq-mue"/>
-                            <constraint firstItem="uGl-fR-goe" firstAttribute="leading" secondItem="iiu-LN-9NE" secondAttribute="leading" id="zAi-F2-NoW"/>
-                            <constraint firstItem="uGl-fR-goe" firstAttribute="top" secondItem="iiu-LN-9NE" secondAttribute="top" id="zch-TK-n2w"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="iiu-LN-9NE"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="7QO-vr-uJr"/>
-                    <connections>
-                        <outlet property="scnView" destination="uGl-fR-goe" id="x6w-cB-fzk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="czn-LD-Ayl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-354.39999999999998" y="-378.26086956521743"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="39A-74-dbE">
-            <objects>
-                <tabBarController id="Ojr-Jo-bly" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aA9-Lw-thc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="pf3-fw-S6Y" kind="relationship" relationship="viewControllers" id="Xom-6B-tUZ"/>
-                        <segue destination="bwe-ti-K4y" kind="relationship" relationship="viewControllers" id="lcR-3G-XhB"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0lB-1w-h9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1305" y="-46"/>
+            <point key="canvasLocation" x="-1206" y="287"/>
         </scene>
     </scenes>
     <resources>

@@ -61,7 +61,7 @@ extension StartSceneViewController : UITextFieldDelegate  {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func keyboardWasShown(notification: NSNotification){
+    @objc func keyboardWasShown(notification: NSNotification){
         //Need to calculate keyboard exact size due to Apple suggestions
         
         self.scrollView.isScrollEnabled = true
@@ -81,7 +81,7 @@ extension StartSceneViewController : UITextFieldDelegate  {
         }
     }
     
-    func keyboardWillBeHidden(notification: NSNotification){
+    @objc func keyboardWillBeHidden(notification: NSNotification){
         //Once keyboard disappears, restore original positions
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
@@ -98,6 +98,12 @@ extension StartSceneViewController : UITextFieldDelegate  {
     
     func textFieldDidEndEditing(_ textField: UITextField){
         activeField = nil
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        performSegue(withIdentifier: "goCameraSegue", sender: self)
+        
+        return false
     }
 }
 
