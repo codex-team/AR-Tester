@@ -17,7 +17,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var webView: WKWebView!
     
     var shadowView : UIView!
+    @IBOutlet weak var overlay: UIView!
     
+    @IBOutlet weak var overlayLabel: UILabel!
     let iPadFrameSize = CGRect(x: 0.0, y: 0.0, width: 768.0, height: 1024.0)
     
     var lastPlaneNode: SCNNode?
@@ -68,7 +70,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         loadImage()
         
         // Set the scene to the view
-        sceneView.scene = scene
+//        sceneView.scene = scene
     }
     
     func loadImage()
