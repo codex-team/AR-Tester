@@ -50,7 +50,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         sceneView.autoenablesDefaultLighting = true
         
-        sceneView.debugOptions  = [.showLightExtents, ARSCNDebugOptions.showFeaturePoints]
+        sceneView.debugOptions  = [.showLightExtents]
         sceneView.automaticallyUpdatesLighting = true
         
         // Create a new scene
@@ -75,12 +75,17 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         loadImage()
         
         // Set the scene to the view
-//        sceneView.scene = scene
+        sceneView.scene = scene
     }
     
     func loadImage()
     {
-        let myURL = URL(string: "https://ifmo.su")
+        if enteredURL == "" || enteredURL == nil {
+            return
+        }
+        
+        let myURL = URL(string: enteredURL)
+        
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
     }
@@ -124,29 +129,15 @@ class CameraController: UIViewController, ARSCNViewDelegate {
             iPad = (iPadScene?.rootNode.childNode(withName: "iPad", recursively: true))!
         }
         
-        self.overlay.removeFromSuperview()
+        self.overlay?.removeFromSuperview()
         
         iPad?.geometry?.sources(for: .texcoord)
-        iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = currentImage
+        if currentImage != nil {
+            iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = currentImage
+        }
         
         iPad?.position = position
         node.addChildNode(iPad!)
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-//        debugPrint("touchesBegan")
-//
-//        guard let touch = touches.first else { return }
-//
-//        let results = sceneView.hitTest(touch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
-//
-//        guard let hitFeature = results.last else { return }
-//        let hitTransform = SCNMatrix4(hitFeature.worldTransform)
-//        let hitPosition = SCNVector3Make(hitTransform.m41, hitTransform.m42, hitTransform.m43)
-//
-//        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-//        addIpad(position: hitPosition, anchor: planeAnchor)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -194,10 +185,10 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
 
         DispatchQueue.main.async {
-            self.overlayLabel.text = "Tap to place device"
+            self.overlayLabel?.text = "Tap to place device"
         }
         
-        plane.materials.first?.diffuse.contents = UIColor(red: 0, green: 0, blue: 1, alpha: 0.35)
+        plane.materials.first?.diffuse.contents = UIColor(red: 0, green: 0, blue: 1, alpha: 0.15)
         
         let planeNode = SCNNode(geometry: plane)
         planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
@@ -227,7 +218,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
         
-        plane.materials.first?.diffuse.contents = UIColor(red: 0, green: 0, blue: 1, alpha: 0.35)
+        plane.materials.first?.diffuse.contents = UIColor(red: 0, green: 0, blue: 1, alpha: 0.15)
         
         let planeNode = SCNNode(geometry: plane)
         planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)

@@ -120,7 +120,7 @@ extension StartSceneViewController : UITextFieldDelegate  {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField){
-        activeField = nil
+//        activeField = nil
     }
 
 }
