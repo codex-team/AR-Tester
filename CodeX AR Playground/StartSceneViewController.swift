@@ -18,9 +18,22 @@ class StartSceneViewController: UIViewController {
         
         self.activeField.delegate = self
 
+        // Prepare view scroll scheme for corrent keyboard opening
         registerForKeyboardNotifications();
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        // Add border bottom to text field
+        let border = CALayer()
+        let width = CGFloat(2.0)
+        border.borderColor = UIColor(red:0.31, green:0.53, blue:0.86, alpha:1.0).cgColor
+//        border.borderColor = UIColor.darkGray.cgColor
+        border.frame = CGRect(x: 0, y: activeField.frame.size.height - width, width:  activeField.frame.size.width, height: activeField.frame.size.height)
+        
+        border.borderWidth = width
+        activeField.layer.addSublayer(border)
+        activeField.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
