@@ -88,16 +88,29 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGN-AB-D6D">
-                                        <rect key="frame" x="30" y="491" width="315" height="36"/>
-                                        <string key="text">Test your site’s layout on the devices 
-in Augmented Reallity</string>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
-                                        <color key="textColor" red="0.55294117647058827" green="0.6588235294117647" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGN-AB-D6D">
+                                        <rect key="frame" x="30" y="491" width="315" height="43"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Test your site’s layout on the devices 
+</string>
+                                                <attributes>
+                                                    <color key="NSColor" red="0.55294117647058827" green="0.6588235294117647" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="15"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="in Augmented Reallity">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.55294117647058827" green="0.6588235294117647" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="15"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.3500000000000001" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X4m-a1-sbU" userLabel="Enter Url">
-                                        <rect key="frame" x="30" y="542" width="315" height="42"/>
+                                        <rect key="frame" x="30" y="549" width="315" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="RvL-Oe-7In"/>
                                         </constraints>
