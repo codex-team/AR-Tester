@@ -32,16 +32,26 @@ class StartSceneViewController: UIViewController {
         deregisterFromKeyboardNotifications()
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "goCameraSegue" {
+            let cameraController = segue.destination as! CameraController
+            cameraController.enteredURL = activeField.text!
+        }
     }
-    */
+
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        performSegue(withIdentifier: "goCameraSegue", sender: self)
+        return false
+        
+    }
   
 
 }
@@ -99,11 +109,6 @@ extension StartSceneViewController : UITextFieldDelegate  {
     func textFieldDidEndEditing(_ textField: UITextField){
         activeField = nil
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        performSegue(withIdentifier: "goCameraSegue", sender: self)
-        
-        return false
-    }
+
 }
 

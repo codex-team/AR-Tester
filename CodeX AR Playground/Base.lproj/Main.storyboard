@@ -12,7 +12,7 @@
         <!--AR Scene-->
         <scene sceneID="wvc-SV-I0b">
             <objects>
-                <viewController title="AR Scene" id="bwe-ti-K4y" customClass="ViewController" customModule="CodeX_AR_Playground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AR Scene" id="bwe-ti-K4y" customClass="CameraController" customModule="CodeX_AR_Playground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YDI-A0-Hyx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

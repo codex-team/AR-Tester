@@ -11,25 +11,25 @@ import SceneKit
 import ARKit
 import WebKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class CameraController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
-    var webView: WKWebView!
-    
-    var shadowView : UIView!
     @IBOutlet weak var overlay: UIView!
-    
     @IBOutlet weak var overlayLabel: UILabel!
+    
+    var webView: WKWebView!
+    var shadowView : UIView!
+    
     let iPadFrameSize = CGRect(x: 0.0, y: 0.0, width: 768.0, height: 1024.0)
     
     var lastPlaneNode: SCNNode?
     var lastAnchor: UUID?
     var iPadUUID: UUID?
     var currentImage: UIImage?
-    
     var iPadScene: SCNScene?
-    
     var iPad: SCNNode?
+    
+    var enteredURL: String = ""
     
     var currentPlane:SCNNode? {
         didSet {
@@ -39,6 +39,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("User enters URL: ")
+        print(enteredURL)
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -239,7 +242,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 }
 
-extension ViewController: WKNavigationDelegate {
+extension CameraController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         

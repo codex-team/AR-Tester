@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DB1F545435002BF34B /* AppDelegate.swift */; };
 		C21393DE1F545435002BF34B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393DD1F545435002BF34B /* art.scnassets */; };
-		C21393E01F545435002BF34B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DF1F545435002BF34B /* ViewController.swift */; };
+		C21393E01F545435002BF34B /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DF1F545435002BF34B /* CameraController.swift */; };
 		C21393E31F545435002BF34B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21393E11F545435002BF34B /* Main.storyboard */; };
 		C21393E51F545435002BF34B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393E41F545435002BF34B /* Assets.xcassets */; };
 		C21393E81F545435002BF34B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21393E61F545435002BF34B /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		C21393D81F545435002BF34B /* CodeX AR Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CodeX AR Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21393DB1F545435002BF34B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C21393DD1F545435002BF34B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		C21393DF1F545435002BF34B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C21393DF1F545435002BF34B /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		C21393E21F545435002BF34B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C21393E41F545435002BF34B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C21393E71F545435002BF34B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				C21393DB1F545435002BF34B /* AppDelegate.swift */,
 				C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */,
 				C21393DD1F545435002BF34B /* art.scnassets */,
-				C21393DF1F545435002BF34B /* ViewController.swift */,
+				C21393DF1F545435002BF34B /* CameraController.swift */,
 				C21393E11F545435002BF34B /* Main.storyboard */,
 				C21393E41F545435002BF34B /* Assets.xcassets */,
 				C21393E61F545435002BF34B /* LaunchScreen.storyboard */,
@@ -377,7 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2FC140B1F5B6EEE00DBA490 /* StartSceneViewController.swift in Sources */,
-				C21393E01F545435002BF34B /* ViewController.swift in Sources */,
+				C21393E01F545435002BF34B /* CameraController.swift in Sources */,
 				C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
