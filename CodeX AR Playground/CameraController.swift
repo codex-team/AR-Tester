@@ -59,7 +59,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         overlay.isUserInteractionEnabled = false
         
         // load scenes
-        iPadScene = SCNScene(named: "art.scnassets/ship.scn")!
+        iPadScene = SCNScene(named: "art.scnassets/ipad/iPad.scn")!
         
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(didTap))
@@ -133,7 +133,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         
         iPad?.geometry?.sources(for: .texcoord)
         if currentImage != nil {
-            iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = currentImage
+            iPad?.geometry?.material(named: "CHANGEABLE_SCREEN")?.diffuse.contents = currentImage
         }
         
         iPad?.position = position
