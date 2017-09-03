@@ -74,7 +74,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Codex Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qsi-wD-1F9">
-                                        <rect key="frame" x="93.5" y="100" width="188" height="188"/>
+                                        <rect key="frame" x="93.5" y="125" width="188" height="188"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="188" id="8jD-vD-Xj7"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="188" id="PWJ-CV-z8d"/>
@@ -135,7 +135,7 @@
                                     <constraint firstItem="X4m-a1-sbU" firstAttribute="centerX" secondItem="QdB-0h-brR" secondAttribute="centerX" id="MjH-79-Y9X"/>
                                     <constraint firstItem="Qsi-wD-1F9" firstAttribute="centerX" secondItem="QdB-0h-brR" secondAttribute="centerX" id="Pw5-gf-RfP"/>
                                     <constraint firstItem="X4m-a1-sbU" firstAttribute="top" secondItem="wGN-AB-D6D" secondAttribute="bottom" constant="15" id="Z22-aD-hDN"/>
-                                    <constraint firstItem="Qsi-wD-1F9" firstAttribute="top" secondItem="QdB-0h-brR" secondAttribute="top" constant="100" id="scv-bm-2t5"/>
+                                    <constraint firstItem="Qsi-wD-1F9" firstAttribute="top" secondItem="QdB-0h-brR" secondAttribute="top" constant="125" id="scv-bm-2t5"/>
                                     <constraint firstItem="X4m-a1-sbU" firstAttribute="leading" secondItem="QdB-0h-brR" secondAttribute="leading" constant="30" id="zBC-Qu-Yms"/>
                                 </constraints>
                             </scrollView>
