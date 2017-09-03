@@ -53,6 +53,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a new scene
         let scene = SCNScene()
         
+        overlay.isUserInteractionEnabled = false
+        
         // load scenes
         iPadScene = SCNScene(named: "art.scnassets/ship.scn")!
         
@@ -118,6 +120,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         } else {
             iPad = (iPadScene?.rootNode.childNode(withName: "iPad", recursively: true))!
         }
+        
+        self.overlay.removeFromSuperview()
         
         iPad?.geometry?.sources(for: .texcoord)
         iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = currentImage
@@ -186,6 +190,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
 
+        DispatchQueue.main.async {
+            self.overlayLabel.text = "Tap to place device"
+        }
+        
         plane.materials.first?.diffuse.contents = UIColor(red: 0, green: 0, blue: 1, alpha: 0.35)
         
         let planeNode = SCNNode(geometry: plane)
