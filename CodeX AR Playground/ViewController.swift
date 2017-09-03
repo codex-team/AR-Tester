@@ -9,12 +9,27 @@
 import UIKit
 import SceneKit
 import ARKit
+import WebKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
+    var webView: WKWebView!
+    
+    var shadowView : UIView!
+    @IBOutlet weak var overlay: UIView!
+    
+    @IBOutlet weak var overlayLabel: UILabel!
+    let iPadFrameSize = CGRect(x: 0.0, y: 0.0, width: 768.0, height: 1024.0)
     
     var lastPlaneNode: SCNNode?
+    var lastAnchor: UUID?
+    var iPadUUID: UUID?
+    var currentImage: UIImage?
+    
+    var iPadScene: SCNScene?
+    
+    var iPad: SCNNode?
     
     var currentPlane:SCNNode? {
         didSet {
@@ -36,14 +51,35 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.automaticallyUpdatesLighting = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
+        
+        overlay.isUserInteractionEnabled = false
+        
+        // load scenes
+        iPadScene = SCNScene(named: "art.scnassets/ship.scn")!
         
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(didTap))
         sceneView.addGestureRecognizer(tap)
         
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.navigationDelegate = self
+        
+        shadowView = webView
+        
+        setupShadowView()
+        loadImage()
+        
         // Set the scene to the view
-        sceneView.scene = scene
+//        sceneView.scene = scene
+    }
+    
+    func loadImage()
+    {
+        let myURL = URL(string: "https://ifmo.su")
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
     }
     
     @objc func didTap( _ sender: UITapGestureRecognizer) {
@@ -70,19 +106,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                                         types: ARHitTestResult.ResultType.existingPlaneUsingExtent)
         
         guard results.count > 0,
-            let anchor = results[0].anchor,
+            let anchor = results[0].anchor as? ARPlaneAnchor,
             let node = sceneView.node(for: anchor) else { return nil }
         
-        return (node, SCNVector3.positionFromTransform(results[0].worldTransform))
+        iPadUUID = anchor.identifier
+        return (node, SCNVector3(x: anchor.center.x, y: anchor.center.y, z: anchor.center.z))
     }
     
     func addIpad(node: SCNNode, position: SCNVector3) {
         
-        let iPad = sceneView.scene.rootNode.childNode(withName: "iPad", recursively: true)?.clone()
+        if iPad != nil {
+            node.addChildNode(iPad!)
+        } else {
+            iPad = (iPadScene?.rootNode.childNode(withName: "iPad", recursively: true))!
+        }
+        
+        self.overlay.removeFromSuperview()
+        
+        iPad?.geometry?.sources(for: .texcoord)
+        iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = currentImage
         
         iPad?.position = position
         node.addChildNode(iPad!)
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -125,13 +170,32 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Release any cached data, images, etc that aren't in use.
     }
     
+    func setupShadowView(){
+        
+        shadowView.frame = iPadFrameSize
+        
+        // Move out the screen
+        shadowView.frame.origin.x = 1000.0
+        
+        
+        view.addSubview(shadowView)
+        
+    }
+    
     // When a plane is detected, make a planeNode for it
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        lastAnchor = planeAnchor.identifier
         
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
 
+        DispatchQueue.main.async {
+            self.overlayLabel.text = "Tap to place device"
+        }
+        
+        plane.materials.first?.diffuse.contents = UIColor(red: 0, green: 0, blue: 1, alpha: 0.35)
+        
         let planeNode = SCNNode(geometry: plane)
         planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
         
@@ -148,7 +212,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         
+        if planeAnchor.identifier == lastAnchor {
+            return
+        }
+        
+        if planeAnchor.identifier == iPadUUID {
+            return
+        }
+        
+        lastAnchor = planeAnchor.identifier
+        
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
+        
+        plane.materials.first?.diffuse.contents = UIColor(red: 0, green: 0, blue: 1, alpha: 0.35)
         
         let planeNode = SCNNode(geometry: plane)
         planeNode.position = SCNVector3Make(planeAnchor.center.x, planeAnchor.center.y, planeAnchor.center.z)
@@ -163,9 +239,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 }
 
-extension SCNVector3 {
-    // from Apples demo APP
-    static func positionFromTransform(_ transform: matrix_float4x4) -> SCNVector3 {
-        return SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
+extension ViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+        print("Webview did finish loading")
+        
+        let image = screenShot()
+        
+        currentImage = image
+    }
+    
+    func screenShot( ) -> UIImage {
+        
+        debugPrint(self.shadowView.frame)
+        UIGraphicsBeginImageContextWithOptions(self.shadowView.frame.size, true, 1.0)
+        
+        let context = UIGraphicsGetCurrentContext()!
+        
+        self.shadowView.layer.render(in: context)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image!
     }
 }
