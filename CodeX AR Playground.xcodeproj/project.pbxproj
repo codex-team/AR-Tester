@@ -13,8 +13,6 @@
 		C21393E31F545435002BF34B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21393E11F545435002BF34B /* Main.storyboard */; };
 		C21393E51F545435002BF34B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393E41F545435002BF34B /* Assets.xcassets */; };
 		C21393E81F545435002BF34B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21393E61F545435002BF34B /* LaunchScreen.storyboard */; };
-		C21393F31F545435002BF34B /* CodeX_AR_PlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393F21F545435002BF34B /* CodeX_AR_PlaygroundTests.swift */; };
-		C21393FE1F545435002BF34B /* CodeX_AR_PlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393FD1F545435002BF34B /* CodeX_AR_PlaygroundUITests.swift */; };
 		C2FC140B1F5B6EEE00DBA490 /* StartSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,11 +43,7 @@
 		C21393E71F545435002BF34B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C21393E91F545435002BF34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C21393EE1F545435002BF34B /* CodeX AR PlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CodeX AR PlaygroundTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C21393F21F545435002BF34B /* CodeX_AR_PlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeX_AR_PlaygroundTests.swift; sourceTree = "<group>"; };
-		C21393F41F545435002BF34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C21393F91F545435002BF34B /* CodeX AR PlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CodeX AR PlaygroundUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C21393FD1F545435002BF34B /* CodeX_AR_PlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeX_AR_PlaygroundUITests.swift; sourceTree = "<group>"; };
-		C21393FF1F545435002BF34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,8 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				C21393DA1F545435002BF34B /* CodeX AR Playground */,
-				C21393F11F545435002BF34B /* CodeX AR PlaygroundTests */,
-				C21393FC1F545435002BF34B /* CodeX AR PlaygroundUITests */,
 				C21393D91F545435002BF34B /* Products */,
 				A48C7ACE0AB277C00581D2BB /* Frameworks */,
 			);
@@ -119,24 +111,6 @@
 				C21393E91F545435002BF34B /* Info.plist */,
 			);
 			path = "CodeX AR Playground";
-			sourceTree = "<group>";
-		};
-		C21393F11F545435002BF34B /* CodeX AR PlaygroundTests */ = {
-			isa = PBXGroup;
-			children = (
-				C21393F21F545435002BF34B /* CodeX_AR_PlaygroundTests.swift */,
-				C21393F41F545435002BF34B /* Info.plist */,
-			);
-			path = "CodeX AR PlaygroundTests";
-			sourceTree = "<group>";
-		};
-		C21393FC1F545435002BF34B /* CodeX AR PlaygroundUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C21393FD1F545435002BF34B /* CodeX_AR_PlaygroundUITests.swift */,
-				C21393FF1F545435002BF34B /* Info.plist */,
-			);
-			path = "CodeX AR PlaygroundUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,7 +360,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21393F31F545435002BF34B /* CodeX_AR_PlaygroundTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C21393FE1F545435002BF34B /* CodeX_AR_PlaygroundUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
