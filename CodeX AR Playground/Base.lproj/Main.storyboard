@@ -96,11 +96,19 @@ in Augmented Reallity</string>
                                         <color key="textColor" red="0.55294117647058827" green="0.6588235294117647" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter URL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X4m-a1-sbU" userLabel="Enter Url">
-                                        <rect key="frame" x="30" y="542" width="315" height="20"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X4m-a1-sbU" userLabel="Enter Url">
+                                        <rect key="frame" x="30" y="542" width="315" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="RvL-Oe-7In"/>
+                                        </constraints>
                                         <color key="textColor" red="0.40000000000000002" green="0.63529411764705879" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" keyboardAppearance="alert" returnKeyType="continue" textContentType="url"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                <color key="value" red="0.40000000000000002" green="0.63529411764705879" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <constraints>
