@@ -80,7 +80,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     
     func loadImage()
     {
-        if enteredURL == "" || enteredURL == nil {
+        if enteredURL == "" {
             return
         }
         
@@ -131,10 +131,10 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         
         self.overlay?.removeFromSuperview()
         
-        iPad?.geometry?.sources(for: .texcoord)
-        if currentImage != nil {
-            iPad?.geometry?.material(named: "Mat_3")?.diffuse.contents = currentImage
-        }
+//        iPad?.geometry?.sources(for: .texcoord)
+//        if currentImage != nil {
+//            iPad?.geometry?.material(named: "Screen")?.diffuse.contents = currentImage
+//        }
         
         iPad?.position = position
         node.addChildNode(iPad!)
@@ -165,15 +165,12 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     }
     
     func setupShadowView(){
-        
         shadowView.frame = iPadFrameSize
         
         // Move out the screen
         shadowView.frame.origin.x = 1000.0
         
-        
         view.addSubview(shadowView)
-        
     }
     
     // When a plane is detected, make a planeNode for it
@@ -244,7 +241,7 @@ extension CameraController: WKNavigationDelegate {
         currentImage = image
     }
     
-    func screenShot( ) -> UIImage {
+    func screenShot() -> UIImage {
         
         debugPrint(self.shadowView.frame)
         UIGraphicsBeginImageContextWithOptions(self.shadowView.frame.size, true, 1.0)
