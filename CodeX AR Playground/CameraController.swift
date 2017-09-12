@@ -118,7 +118,8 @@ class CameraController: UIViewController, ARSCNViewDelegate {
             let node = sceneView.node(for: anchor) else { return nil }
         
         iPadUUID = anchor.identifier
-        return (node, SCNVector3(x: anchor.center.x, y: anchor.center.y, z: anchor.center.z))
+        print(anchor.center)
+        return (node, SCNVector3(x: anchor.center.x, y: -0.02, z: anchor.center.z))
     }
     
     func addIpad(node: SCNNode, position: SCNVector3) {
@@ -133,8 +134,8 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         
         self.overlay?.removeFromSuperview()
         
-        iPad?.geometry?.sources(for: .texcoord)
         if currentImage != nil {
+            iPad?.geometry?.sources(for: .texcoord)
             iPad?.geometry?.material(named: "CHANGEABLE_SCREEN")?.diffuse.contents = currentImage
         } else {
             print("No image")

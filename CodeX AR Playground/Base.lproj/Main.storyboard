@@ -109,7 +109,7 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://ifmo.su" placeholder="Enter URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X4m-a1-sbU" userLabel="Enter Url">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X4m-a1-sbU" userLabel="Enter Url">
                                         <rect key="frame" x="30" y="549" width="315" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="RvL-Oe-7In"/>
