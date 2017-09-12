@@ -135,7 +135,6 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         iPad?.geometry?.sources(for: .texcoord)
         if currentImage != nil {
             iPad?.geometry?.material(named: "CHANGEABLE_SCREEN")?.diffuse.contents = currentImage
-            print(iPad?.geometry?.material(named: "CHANGEABLE_SCREEN")?.diffuse.contents)
         } else {
             print("No image")
         }
