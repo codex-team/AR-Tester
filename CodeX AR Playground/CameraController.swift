@@ -67,12 +67,12 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.navigationDelegate = self
+        
+        loadImage()
         
         shadowView = webView
         
         setupShadowView()
-        loadImage()
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -123,6 +123,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     
     func addIpad(node: SCNNode, position: SCNVector3) {
         
+        currentImage = screenShot()
 
         if iPad != nil {
             node.addChildNode(iPad!)
@@ -231,30 +232,18 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         node.addChildNode(planeNode)
         
     }
-}
-
-extension CameraController: WKNavigationDelegate {
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
-        print("Webview did finish loading")
-        
-        let image = screenShot()
-        
-        currentImage = image
-    }
     
     func screenShot() -> UIImage {
         
-        debugPrint(self.shadowView.frame)
-        UIGraphicsBeginImageContextWithOptions(self.shadowView.frame.size, true, 1.0)
+        UIGraphicsBeginImageContextWithOptions(shadowView.frame.size, true, 1.0)
         
         let context = UIGraphicsGetCurrentContext()!
         
-        self.shadowView.layer.render(in: context)
+        shadowView.layer.render(in: context)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return image!
     }
 }
+
