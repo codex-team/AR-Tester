@@ -59,7 +59,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         overlay.isUserInteractionEnabled = false
         
         // load scenes
-        iPadScene = SCNScene(named: "art.scnassets/ship.scn")!
+        iPadScene = SCNScene(named: "art.scnassets/iPad/iPad.scn")!
         
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(didTap))
@@ -123,18 +123,22 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     
     func addIpad(node: SCNNode, position: SCNVector3) {
         
+
         if iPad != nil {
             node.addChildNode(iPad!)
         } else {
-            iPad = (iPadScene?.rootNode.childNode(withName: "iPad", recursively: true))!
+            iPad = (iPadScene?.rootNode.childNode(withName: "iPad_CHANGEABLE_SCREEN", recursively: true))!
         }
         
         self.overlay?.removeFromSuperview()
         
-//        iPad?.geometry?.sources(for: .texcoord)
-//        if currentImage != nil {
-//            iPad?.geometry?.material(named: "Screen")?.diffuse.contents = currentImage
-//        }
+        iPad?.geometry?.sources(for: .texcoord)
+        if currentImage != nil {
+            iPad?.geometry?.material(named: "CHANGEABLE_SCREEN")?.diffuse.contents = currentImage
+            print(iPad?.geometry?.material(named: "CHANGEABLE_SCREEN")?.diffuse.contents)
+        } else {
+            print("No image")
+        }
         
         iPad?.position = position
         node.addChildNode(iPad!)
