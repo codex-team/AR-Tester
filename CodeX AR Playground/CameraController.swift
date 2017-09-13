@@ -59,7 +59,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         overlay.isUserInteractionEnabled = false
         
         // load scenes
-        iPadScene = SCNScene(named: "art.scnassets/ipad/iPad.scn")!
+        iPadScene = SCNScene(named: "art.scnassets/iPad/iPad.scn")!
         
         let tap = UITapGestureRecognizer()
         tap.addTarget(self, action: #selector(didTap))
@@ -67,12 +67,12 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.navigationDelegate = self
+        
+        loadImage()
         
         shadowView = webView
         
         setupShadowView()
-        loadImage()
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -80,7 +80,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     
     func loadImage()
     {
-        if enteredURL == "" || enteredURL == nil {
+        if enteredURL == "" {
             return
         }
         
@@ -118,22 +118,27 @@ class CameraController: UIViewController, ARSCNViewDelegate {
             let node = sceneView.node(for: anchor) else { return nil }
         
         iPadUUID = anchor.identifier
-        return (node, SCNVector3(x: anchor.center.x, y: anchor.center.y, z: anchor.center.z))
+        print(anchor.center)
+        return (node, SCNVector3(x: anchor.center.x, y: -0.02, z: anchor.center.z))
     }
     
     func addIpad(node: SCNNode, position: SCNVector3) {
         
+        currentImage = screenShot()
+
         if iPad != nil {
             node.addChildNode(iPad!)
         } else {
-            iPad = (iPadScene?.rootNode.childNode(withName: "iPad", recursively: true))!
+            iPad = (iPadScene?.rootNode.childNode(withName: "iPad_CHANGEABLE_SCREEN", recursively: true))!
         }
         
         self.overlay?.removeFromSuperview()
         
-        iPad?.geometry?.sources(for: .texcoord)
         if currentImage != nil {
+            iPad?.geometry?.sources(for: .texcoord)
             iPad?.geometry?.material(named: "CHANGEABLE_SCREEN")?.diffuse.contents = currentImage
+        } else {
+            print("No image")
         }
         
         iPad?.position = position
@@ -165,15 +170,12 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     }
     
     func setupShadowView(){
-        
         shadowView.frame = iPadFrameSize
         
         // Move out the screen
         shadowView.frame.origin.x = 1000.0
         
-        
         view.addSubview(shadowView)
-        
     }
     
     // When a plane is detected, make a planeNode for it
@@ -231,30 +233,18 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         node.addChildNode(planeNode)
         
     }
-}
-
-extension CameraController: WKNavigationDelegate {
     
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    func screenShot() -> UIImage {
         
-        print("Webview did finish loading")
-        
-        let image = screenShot()
-        
-        currentImage = image
-    }
-    
-    func screenShot( ) -> UIImage {
-        
-        debugPrint(self.shadowView.frame)
-        UIGraphicsBeginImageContextWithOptions(self.shadowView.frame.size, true, 1.0)
+        UIGraphicsBeginImageContextWithOptions(shadowView.frame.size, true, 1.0)
         
         let context = UIGraphicsGetCurrentContext()!
         
-        self.shadowView.layer.render(in: context)
+        shadowView.layer.render(in: context)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return image!
     }
 }
+
