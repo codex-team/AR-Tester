@@ -1,6 +1,6 @@
 //
 //  StartSceneViewController.swift
-//  CodeX AR Playground
+//  AR-Tester
 //
 //  Created by Peter Savchenko on 03/09/2017.
 //  Copyright © 2017 Peter Savchenko. All rights reserved.
