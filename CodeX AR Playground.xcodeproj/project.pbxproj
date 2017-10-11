@@ -14,6 +14,7 @@
 		C21393E51F545435002BF34B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393E41F545435002BF34B /* Assets.xcassets */; };
 		C21393E81F545435002BF34B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21393E61F545435002BF34B /* LaunchScreen.storyboard */; };
 		C2FC140B1F5B6EEE00DBA490 /* StartSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */; };
+		FF894CEB20956CEE755F7D85 /* Pods_CodeX_AR_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0087A097ED40149299DB2B9C /* Pods_CodeX_AR_Playground.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0087A097ED40149299DB2B9C /* Pods_CodeX_AR_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeX_AR_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4967DA20AD084E2992D5C2E8 /* Pods_CodeX_AR_PlaygroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeX_AR_PlaygroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88379CA6C146C4CD17CA807C /* Pods_CodeX_AR_PlaygroundUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeX_AR_PlaygroundUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC553EEDD06215B14860AE77 /* Pods-CodeX AR Playground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeX AR Playground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeX AR Playground/Pods-CodeX AR Playground.debug.xcconfig"; sourceTree = "<group>"; };
 		C21393D81F545435002BF34B /* CodeX AR Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CodeX AR Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21393DB1F545435002BF34B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C21393DD1F545435002BF34B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 		C21393EE1F545435002BF34B /* CodeX AR PlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CodeX AR PlaygroundTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21393F91F545435002BF34B /* CodeX AR PlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CodeX AR PlaygroundUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneViewController.swift; sourceTree = "<group>"; };
+		E1A4C7A444204B35E47294D5 /* Pods-CodeX AR Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeX AR Playground.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeX AR Playground/Pods-CodeX AR Playground.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF894CEB20956CEE755F7D85 /* Pods_CodeX_AR_Playground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +79,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D8E8A47C3DD33C8711BFD5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC553EEDD06215B14860AE77 /* Pods-CodeX AR Playground.debug.xcconfig */,
+				E1A4C7A444204B35E47294D5 /* Pods-CodeX AR Playground.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A48C7ACE0AB277C00581D2BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0087A097ED40149299DB2B9C /* Pods_CodeX_AR_Playground.framework */,
+				4967DA20AD084E2992D5C2E8 /* Pods_CodeX_AR_PlaygroundTests.framework */,
+				88379CA6C146C4CD17CA807C /* Pods_CodeX_AR_PlaygroundUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,6 +104,7 @@
 				C21393DA1F545435002BF34B /* CodeX AR Playground */,
 				C21393D91F545435002BF34B /* Products */,
 				A48C7ACE0AB277C00581D2BB /* Frameworks */,
+				8D8E8A47C3DD33C8711BFD5C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +143,10 @@
 				C21393D41F545435002BF34B /* Sources */,
 				C21393D51F545435002BF34B /* Frameworks */,
 				C21393D61F545435002BF34B /* Resources */,
+				12661B0547A6AB072D16468B /* [CP] Embed Pods Frameworks */,
+				D04E60AFF5500871DCBFDBB7 /* [CP] Copy Pods Resources */,
+				55F2E1BF522FC72356CA9F80 /* [CP] Check Pods Manifest.lock */,
+				23DA38AF1F8E11A200C8E2BC /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -137,12 +161,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C21394051F545435002BF34B /* Build configuration list for PBXNativeTarget "CodeX AR PlaygroundTests" */;
 			buildPhases = (
-				3225549B768C6558A7B560E9 /* [CP] Check Pods Manifest.lock */,
 				C21393EA1F545435002BF34B /* Sources */,
 				C21393EB1F545435002BF34B /* Frameworks */,
 				C21393EC1F545435002BF34B /* Resources */,
-				67DB1921A3452A52548F5536 /* [CP] Embed Pods Frameworks */,
-				1AD01B726C2B91C604347DD7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,12 +179,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C21394081F545435002BF34B /* Build configuration list for PBXNativeTarget "CodeX AR PlaygroundUITests" */;
 			buildPhases = (
-				80B9FC86F45EE1737F65586B /* [CP] Check Pods Manifest.lock */,
 				C21393F51F545435002BF34B /* Sources */,
 				C21393F61F545435002BF34B /* Frameworks */,
 				C21393F71F545435002BF34B /* Resources */,
-				27A1EFB8A2A91DFF06BC6D58 /* [CP] Embed Pods Frameworks */,
-				0EB59697D6EBDE71DC7DF79F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,37 +265,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0EB59697D6EBDE71DC7DF79F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeX AR PlaygroundUITests/Pods-CodeX AR PlaygroundUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1AD01B726C2B91C604347DD7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeX AR PlaygroundTests/Pods-CodeX AR PlaygroundTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		27A1EFB8A2A91DFF06BC6D58 /* [CP] Embed Pods Frameworks */ = {
+		12661B0547A6AB072D16468B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -289,10 +277,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeX AR PlaygroundUITests/Pods-CodeX AR PlaygroundUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeX AR Playground/Pods-CodeX AR Playground-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3225549B768C6558A7B560E9 /* [CP] Check Pods Manifest.lock */ = {
+		23DA38AF1F8E11A200C8E2BC /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 074bf5eb6b8b4390a53923f4c7e2d96042c30681 2c9ffc8e5b78220777b8304349a483add862468b4770b0b29b9346fe7c2760c0";
+		};
+		55F2E1BF522FC72356CA9F80 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,44 +305,26 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CodeX AR PlaygroundTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CodeX AR Playground-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		67DB1921A3452A52548F5536 /* [CP] Embed Pods Frameworks */ = {
+		D04E60AFF5500871DCBFDBB7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeX AR PlaygroundTests/Pods-CodeX AR PlaygroundTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		80B9FC86F45EE1737F65586B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CodeX AR PlaygroundUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeX AR Playground/Pods-CodeX AR Playground-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -514,6 +498,7 @@
 		};
 		C21394031F545435002BF34B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC553EEDD06215B14860AE77 /* Pods-CodeX AR Playground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QNXAZC58W;
@@ -533,6 +518,7 @@
 		};
 		C21394041F545435002BF34B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1A4C7A444204B35E47294D5 /* Pods-CodeX AR Playground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QNXAZC58W;
