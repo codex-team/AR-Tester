@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CodeX AR Playground
+//  AR-Tester
 //
 //  Created by Peter Savchenko on 28/08/2017.
 //  Copyright © 2017 Peter Savchenko. All rights reserved.
