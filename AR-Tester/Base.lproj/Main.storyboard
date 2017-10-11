@@ -12,7 +12,7 @@
         <!--AR Scene-->
         <scene sceneID="wvc-SV-I0b">
             <objects>
-                <viewController title="AR Scene" id="bwe-ti-K4y" customClass="CameraController" customModule="CodeX_AR_Playground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AR Scene" id="bwe-ti-K4y" customClass="CameraController" customModule="AR_Tester" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YDI-A0-Hyx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
         <!--StartScreen-->
         <scene sceneID="nep-o9-RfR">
             <objects>
-                <viewController title="StartScreen" id="iSG-zV-FHL" customClass="StartSceneViewController" customModule="CodeX_AR_Playground" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="StartScreen" id="iSG-zV-FHL" customClass="StartSceneViewController" customModule="AR_Tester" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AKd-LV-qIx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                                     <font key="NSFont" metaFont="system" size="15"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment content="in Augmented Reallity">
+                                            <fragment content="in Augmented Reality">
                                                 <attributes>
                                                     <color key="NSColor" red="0.55294117647058827" green="0.6588235294117647" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" metaFont="system" size="15"/>
