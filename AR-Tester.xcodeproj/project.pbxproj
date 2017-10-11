@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23DA38B01F8E243100C8E2BC /* AR-TesterTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C21393EE1F545435002BF34B /* AR-TesterTests.xctest */; };
+		23DA38B11F8E243300C8E2BC /* AR-TesterTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C21393EE1F545435002BF34B /* AR-TesterTests.xctest */; };
+		38EA8BCD278232D779035E87 /* Pods_AR_Tester.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CB57BC30CE90C3485B0ECA /* Pods_AR_Tester.framework */; };
 		C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DB1F545435002BF34B /* AppDelegate.swift */; };
 		C21393DE1F545435002BF34B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393DD1F545435002BF34B /* art.scnassets */; };
 		C21393E01F545435002BF34B /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DF1F545435002BF34B /* CameraController.swift */; };
@@ -14,7 +17,6 @@
 		C21393E51F545435002BF34B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393E41F545435002BF34B /* Assets.xcassets */; };
 		C21393E81F545435002BF34B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21393E61F545435002BF34B /* LaunchScreen.storyboard */; };
 		C2FC140B1F5B6EEE00DBA490 /* StartSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */; };
-		FF894CEB20956CEE755F7D85 /* Pods_CodeX_AR_Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0087A097ED40149299DB2B9C /* Pods_CodeX_AR_Playground.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,23 +25,21 @@
 			containerPortal = C21393D01F545435002BF34B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C21393D71F545435002BF34B;
-			remoteInfo = "CodeX AR Playground";
+			remoteInfo = "AR-Tester";
 		};
 		C21393FA1F545435002BF34B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C21393D01F545435002BF34B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C21393D71F545435002BF34B;
-			remoteInfo = "CodeX AR Playground";
+			remoteInfo = "AR-Tester";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0087A097ED40149299DB2B9C /* Pods_CodeX_AR_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeX_AR_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4967DA20AD084E2992D5C2E8 /* Pods_CodeX_AR_PlaygroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeX_AR_PlaygroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		88379CA6C146C4CD17CA807C /* Pods_CodeX_AR_PlaygroundUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeX_AR_PlaygroundUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC553EEDD06215B14860AE77 /* Pods-CodeX AR Playground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeX AR Playground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeX AR Playground/Pods-CodeX AR Playground.debug.xcconfig"; sourceTree = "<group>"; };
-		C21393D81F545435002BF34B /* CodeX AR Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CodeX AR Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B16C0D3EC27696A7455BF75 /* Pods-AR-Tester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Tester.release.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Tester/Pods-AR-Tester.release.xcconfig"; sourceTree = "<group>"; };
+		97FFA548E22A16129B7B6B41 /* Pods-AR-Tester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Tester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Tester/Pods-AR-Tester.debug.xcconfig"; sourceTree = "<group>"; };
+		C21393D81F545435002BF34B /* AR-Tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21393DB1F545435002BF34B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C21393DD1F545435002BF34B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		C21393DF1F545435002BF34B /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -47,10 +47,10 @@
 		C21393E41F545435002BF34B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C21393E71F545435002BF34B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C21393E91F545435002BF34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C21393EE1F545435002BF34B /* CodeX AR PlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CodeX AR PlaygroundTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C21393F91F545435002BF34B /* CodeX AR PlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CodeX AR PlaygroundUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C21393EE1F545435002BF34B /* AR-TesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AR-TesterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C21393F91F545435002BF34B /* AR-TesterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AR-TesterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSceneViewController.swift; sourceTree = "<group>"; };
-		E1A4C7A444204B35E47294D5 /* Pods-CodeX AR Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeX AR Playground.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeX AR Playground/Pods-CodeX AR Playground.release.xcconfig"; sourceTree = "<group>"; };
+		F1CB57BC30CE90C3485B0ECA /* Pods_AR_Tester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Tester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF894CEB20956CEE755F7D85 /* Pods_CodeX_AR_Playground.framework in Frameworks */,
+				38EA8BCD278232D779035E87 /* Pods_AR_Tester.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,46 +79,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8D8E8A47C3DD33C8711BFD5C /* Pods */ = {
+		7C3170B68FACCBD93B39D22A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BC553EEDD06215B14860AE77 /* Pods-CodeX AR Playground.debug.xcconfig */,
-				E1A4C7A444204B35E47294D5 /* Pods-CodeX AR Playground.release.xcconfig */,
+				97FFA548E22A16129B7B6B41 /* Pods-AR-Tester.debug.xcconfig */,
+				2B16C0D3EC27696A7455BF75 /* Pods-AR-Tester.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		A48C7ACE0AB277C00581D2BB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0087A097ED40149299DB2B9C /* Pods_CodeX_AR_Playground.framework */,
-				4967DA20AD084E2992D5C2E8 /* Pods_CodeX_AR_PlaygroundTests.framework */,
-				88379CA6C146C4CD17CA807C /* Pods_CodeX_AR_PlaygroundUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C21393CF1F545435002BF34B = {
 			isa = PBXGroup;
 			children = (
-				C21393DA1F545435002BF34B /* CodeX AR Playground */,
+				C21393DA1F545435002BF34B /* AR-Tester */,
 				C21393D91F545435002BF34B /* Products */,
-				A48C7ACE0AB277C00581D2BB /* Frameworks */,
-				8D8E8A47C3DD33C8711BFD5C /* Pods */,
+				7C3170B68FACCBD93B39D22A /* Pods */,
+				EFF98F6CBBE14E41422A5E74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		C21393D91F545435002BF34B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C21393D81F545435002BF34B /* CodeX AR Playground.app */,
-				C21393EE1F545435002BF34B /* CodeX AR PlaygroundTests.xctest */,
-				C21393F91F545435002BF34B /* CodeX AR PlaygroundUITests.xctest */,
+				C21393D81F545435002BF34B /* AR-Tester.app */,
+				C21393EE1F545435002BF34B /* AR-TesterTests.xctest */,
+				C21393F91F545435002BF34B /* AR-TesterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C21393DA1F545435002BF34B /* CodeX AR Playground */ = {
+		C21393DA1F545435002BF34B /* AR-Tester */ = {
 			isa = PBXGroup;
 			children = (
 				C21393DB1F545435002BF34B /* AppDelegate.swift */,
@@ -130,36 +120,44 @@
 				C21393E61F545435002BF34B /* LaunchScreen.storyboard */,
 				C21393E91F545435002BF34B /* Info.plist */,
 			);
-			path = "CodeX AR Playground";
+			path = "AR-Tester";
+			sourceTree = "<group>";
+		};
+		EFF98F6CBBE14E41422A5E74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1CB57BC30CE90C3485B0ECA /* Pods_AR_Tester.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C21393D71F545435002BF34B /* CodeX AR Playground */ = {
+		C21393D71F545435002BF34B /* AR-Tester */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C21394021F545435002BF34B /* Build configuration list for PBXNativeTarget "CodeX AR Playground" */;
+			buildConfigurationList = C21394021F545435002BF34B /* Build configuration list for PBXNativeTarget "AR-Tester" */;
 			buildPhases = (
+				55F2E1BF522FC72356CA9F80 /* [CP] Check Pods Manifest.lock */,
 				C21393D41F545435002BF34B /* Sources */,
 				C21393D51F545435002BF34B /* Frameworks */,
 				C21393D61F545435002BF34B /* Resources */,
 				12661B0547A6AB072D16468B /* [CP] Embed Pods Frameworks */,
 				D04E60AFF5500871DCBFDBB7 /* [CP] Copy Pods Resources */,
-				55F2E1BF522FC72356CA9F80 /* [CP] Check Pods Manifest.lock */,
 				23DA38AF1F8E11A200C8E2BC /* Fabric */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "CodeX AR Playground";
-			productName = "CodeX AR Playground";
-			productReference = C21393D81F545435002BF34B /* CodeX AR Playground.app */;
+			name = "AR-Tester";
+			productName = "AR-Tester";
+			productReference = C21393D81F545435002BF34B /* AR-Tester.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C21393ED1F545435002BF34B /* CodeX AR PlaygroundTests */ = {
+		C21393ED1F545435002BF34B /* AR-TesterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C21394051F545435002BF34B /* Build configuration list for PBXNativeTarget "CodeX AR PlaygroundTests" */;
+			buildConfigurationList = C21394051F545435002BF34B /* Build configuration list for PBXNativeTarget "AR-TesterTests" */;
 			buildPhases = (
 				C21393EA1F545435002BF34B /* Sources */,
 				C21393EB1F545435002BF34B /* Frameworks */,
@@ -170,14 +168,14 @@
 			dependencies = (
 				C21393F01F545435002BF34B /* PBXTargetDependency */,
 			);
-			name = "CodeX AR PlaygroundTests";
-			productName = "CodeX AR PlaygroundTests";
-			productReference = C21393EE1F545435002BF34B /* CodeX AR PlaygroundTests.xctest */;
+			name = "AR-TesterTests";
+			productName = "AR-TesterTests";
+			productReference = C21393EE1F545435002BF34B /* AR-TesterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C21393F81F545435002BF34B /* CodeX AR PlaygroundUITests */ = {
+		C21393F81F545435002BF34B /* AR-TesterUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C21394081F545435002BF34B /* Build configuration list for PBXNativeTarget "CodeX AR PlaygroundUITests" */;
+			buildConfigurationList = C21394081F545435002BF34B /* Build configuration list for PBXNativeTarget "AR-TesterUITests" */;
 			buildPhases = (
 				C21393F51F545435002BF34B /* Sources */,
 				C21393F61F545435002BF34B /* Frameworks */,
@@ -188,9 +186,9 @@
 			dependencies = (
 				C21393FB1F545435002BF34B /* PBXTargetDependency */,
 			);
-			name = "CodeX AR PlaygroundUITests";
-			productName = "CodeX AR PlaygroundUITests";
-			productReference = C21393F91F545435002BF34B /* CodeX AR PlaygroundUITests.xctest */;
+			name = "AR-TesterUITests";
+			productName = "AR-TesterUITests";
+			productReference = C21393F91F545435002BF34B /* AR-TesterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -216,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C21393D31F545435002BF34B /* Build configuration list for PBXProject "CodeX AR Playground" */;
+			buildConfigurationList = C21393D31F545435002BF34B /* Build configuration list for PBXProject "AR-Tester" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -229,9 +227,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C21393D71F545435002BF34B /* CodeX AR Playground */,
-				C21393ED1F545435002BF34B /* CodeX AR PlaygroundTests */,
-				C21393F81F545435002BF34B /* CodeX AR PlaygroundUITests */,
+				C21393D71F545435002BF34B /* AR-Tester */,
+				C21393ED1F545435002BF34B /* AR-TesterTests */,
+				C21393F81F545435002BF34B /* AR-TesterUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -252,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DA38B01F8E243100C8E2BC /* AR-TesterTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DA38B11F8E243300C8E2BC /* AR-TesterTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,12 +277,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeX AR Playground/Pods-CodeX AR Playground-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AR-Tester/Pods-AR-Tester-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		23DA38AF1F8E11A200C8E2BC /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -305,7 +305,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CodeX AR Playground-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AR-Tester-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -324,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodeX AR Playground/Pods-CodeX AR Playground-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AR-Tester/Pods-AR-Tester-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -359,12 +359,12 @@
 /* Begin PBXTargetDependency section */
 		C21393F01F545435002BF34B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C21393D71F545435002BF34B /* CodeX AR Playground */;
+			target = C21393D71F545435002BF34B /* AR-Tester */;
 			targetProxy = C21393EF1F545435002BF34B /* PBXContainerItemProxy */;
 		};
 		C21393FB1F545435002BF34B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C21393D71F545435002BF34B /* CodeX AR Playground */;
+			target = C21393D71F545435002BF34B /* AR-Tester */;
 			targetProxy = C21393FA1F545435002BF34B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -498,7 +498,7 @@
 		};
 		C21394031F545435002BF34B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC553EEDD06215B14860AE77 /* Pods-CodeX AR Playground.debug.xcconfig */;
+			baseConfigurationReference = 97FFA548E22A16129B7B6B41 /* Pods-AR-Tester.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QNXAZC58W;
@@ -507,7 +507,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
 				);
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
-				INFOPLIST_FILE = "CodeX AR Playground/Info.plist";
+				INFOPLIST_FILE = "AR-Tester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = guryn.Codex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,7 +518,7 @@
 		};
 		C21394041F545435002BF34B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1A4C7A444204B35E47294D5 /* Pods-CodeX AR Playground.release.xcconfig */;
+			baseConfigurationReference = 2B16C0D3EC27696A7455BF75 /* Pods-AR-Tester.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QNXAZC58W;
@@ -526,7 +526,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
 				);
-				INFOPLIST_FILE = "CodeX AR Playground/Info.plist";
+				INFOPLIST_FILE = "AR-Tester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = guryn.Codex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,13 +541,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 75V9LCGNX5;
-				INFOPLIST_FILE = "CodeX AR PlaygroundTests/Info.plist";
+				INFOPLIST_FILE = "AR-TesterTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CodeX.CodeX-AR-PlaygroundTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeX AR Playground.app/CodeX AR Playground";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AR-Tester.app/AR-Tester";
 			};
 			name = Debug;
 		};
@@ -557,13 +557,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 75V9LCGNX5;
-				INFOPLIST_FILE = "CodeX AR PlaygroundTests/Info.plist";
+				INFOPLIST_FILE = "AR-TesterTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CodeX.CodeX-AR-PlaygroundTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeX AR Playground.app/CodeX AR Playground";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AR-Tester.app/AR-Tester";
 			};
 			name = Release;
 		};
@@ -572,13 +572,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 75V9LCGNX5;
-				INFOPLIST_FILE = "CodeX AR PlaygroundUITests/Info.plist";
+				INFOPLIST_FILE = "AR-TesterUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CodeX.CodeX-AR-PlaygroundUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "CodeX AR Playground";
+				TEST_TARGET_NAME = "AR-Tester";
 			};
 			name = Debug;
 		};
@@ -587,20 +587,20 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 75V9LCGNX5;
-				INFOPLIST_FILE = "CodeX AR PlaygroundUITests/Info.plist";
+				INFOPLIST_FILE = "AR-TesterUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CodeX.CodeX-AR-PlaygroundUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "CodeX AR Playground";
+				TEST_TARGET_NAME = "AR-Tester";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C21393D31F545435002BF34B /* Build configuration list for PBXProject "CodeX AR Playground" */ = {
+		C21393D31F545435002BF34B /* Build configuration list for PBXProject "AR-Tester" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C21394001F545435002BF34B /* Debug */,
@@ -609,7 +609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C21394021F545435002BF34B /* Build configuration list for PBXNativeTarget "CodeX AR Playground" */ = {
+		C21394021F545435002BF34B /* Build configuration list for PBXNativeTarget "AR-Tester" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C21394031F545435002BF34B /* Debug */,
@@ -618,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C21394051F545435002BF34B /* Build configuration list for PBXNativeTarget "CodeX AR PlaygroundTests" */ = {
+		C21394051F545435002BF34B /* Build configuration list for PBXNativeTarget "AR-TesterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C21394061F545435002BF34B /* Debug */,
@@ -627,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C21394081F545435002BF34B /* Build configuration list for PBXNativeTarget "CodeX AR PlaygroundUITests" */ = {
+		C21394081F545435002BF34B /* Build configuration list for PBXNativeTarget "AR-TesterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C21394091F545435002BF34B /* Debug */,
