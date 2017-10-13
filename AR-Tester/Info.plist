@@ -20,6 +20,20 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>074bf5eb6b8b4390a53923f4c7e2d96042c30681</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
@@ -48,19 +62,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-  <key>Fabric</key>
-  <dict>
-    <key>APIKey</key>
-    <string>074bf5eb6b8b4390a53923f4c7e2d96042c30681</string>
-    <key>Kits</key>
-    <array>
-      <dict>
-        <key>KitInfo</key>
-        <dict/>
-        <key>KitName</key>
-        <string>Crashlytics</string>
-      </dict>
-    </array>
-  </dict>
 </dict>
 </plist>
