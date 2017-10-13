@@ -109,6 +109,7 @@
 				D04E60AFF5500871DCBFDBB7 /* [CP] Copy Pods Resources */,
 				23DA38AF1F8E11A200C8E2BC /* Run script Fabric */,
 				2399C8471F90C33100A78920 /* Run script Swiftlint */,
+				23DFA10B1F91657D0034F581 /* Run Script ChangeKeeper */,
 			);
 			buildRules = (
 			);
@@ -209,6 +210,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 074bf5eb6b8b4390a53923f4c7e2d96042c30681 2c9ffc8e5b78220777b8304349a483add862468b4770b0b29b9346fe7c2760c0";
+		};
+		23DFA10B1F91657D0034F581 /* Run Script ChangeKeeper */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script ChangeKeeper";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash Scripts/ChangeKeeper.sh xcode 300 100";
 		};
 		55F2E1BF522FC72356CA9F80 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
