@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2399C8481F90E1A800A78920 /* AR-TesterUITests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C21393F91F545435002BF34B /* AR-TesterUITests.xctest */; };
 		23DA38B01F8E243100C8E2BC /* AR-TesterTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C21393EE1F545435002BF34B /* AR-TesterTests.xctest */; };
-		23DA38B11F8E243300C8E2BC /* AR-TesterTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = C21393EE1F545435002BF34B /* AR-TesterTests.xctest */; };
 		38EA8BCD278232D779035E87 /* Pods_AR_Tester.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CB57BC30CE90C3485B0ECA /* Pods_AR_Tester.framework */; };
 		C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DB1F545435002BF34B /* AppDelegate.swift */; };
 		C21393DE1F545435002BF34B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393DD1F545435002BF34B /* art.scnassets */; };
@@ -144,7 +144,8 @@
 				C21393D61F545435002BF34B /* Resources */,
 				12661B0547A6AB072D16468B /* [CP] Embed Pods Frameworks */,
 				D04E60AFF5500871DCBFDBB7 /* [CP] Copy Pods Resources */,
-				23DA38AF1F8E11A200C8E2BC /* Fabric */,
+				23DA38AF1F8E11A200C8E2BC /* Run script Fabric */,
+				2399C8471F90C33100A78920 /* Run script Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -250,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2399C8481F90E1A800A78920 /* AR-TesterUITests.xctest in Resources */,
 				23DA38B01F8E243100C8E2BC /* AR-TesterTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23DA38B11F8E243300C8E2BC /* AR-TesterTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,14 +281,28 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AR-Tester/Pods-AR-Tester-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		23DA38AF1F8E11A200C8E2BC /* Fabric */ = {
+		2399C8471F90C33100A78920 /* Run script Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run script Swiftlint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#Если ветка master, то првоеряет все файлы, если нет, то только те, которые изменены\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		23DA38AF1F8E11A200C8E2BC /* Run script Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = Fabric;
+			name = "Run script Fabric";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,11 +516,9 @@
 			baseConfigurationReference = 97FFA548E22A16129B7B6B41 /* Pods-AR-Tester.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 3QNXAZC58W;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				INFOPLIST_FILE = "AR-Tester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -522,10 +535,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3QNXAZC58W;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos/IQKeyboardManagerSwift",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AR-Tester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = guryn.Codex;
