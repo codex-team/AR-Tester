@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6ADE424313E398FF16227AD0 /* libPods-AR-Tester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AE5ECD3DAC7479941C58F8 /* libPods-AR-Tester.a */; };
+		62C72C025493CD7BF278804E /* libPods-AR-Tester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB964CD86DAE6957500DA1AA /* libPods-AR-Tester.a */; };
 		C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DB1F545435002BF34B /* AppDelegate.swift */; };
 		C21393DE1F545435002BF34B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393DD1F545435002BF34B /* art.scnassets */; };
 		C21393E01F545435002BF34B /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DF1F545435002BF34B /* CameraController.swift */; };
@@ -29,7 +29,7 @@
 		C21393E71F545435002BF34B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C21393E91F545435002BF34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = StartSceneViewController.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
-		F4AE5ECD3DAC7479941C58F8 /* libPods-AR-Tester.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AR-Tester.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB964CD86DAE6957500DA1AA /* libPods-AR-Tester.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AR-Tester.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ADE424313E398FF16227AD0 /* libPods-AR-Tester.a in Frameworks */,
+				62C72C025493CD7BF278804E /* libPods-AR-Tester.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +47,7 @@
 		17FA49B2321CECAFC53CB54D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4AE5ECD3DAC7479941C58F8 /* libPods-AR-Tester.a */,
+				DB964CD86DAE6957500DA1AA /* libPods-AR-Tester.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

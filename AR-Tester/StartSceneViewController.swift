@@ -24,7 +24,7 @@ class StartSceneViewController: UIViewController {
         let border = CALayer()
         let width = CGFloat(2.0)
         border.borderColor = UIColor(red: 0.31, green: 0.53, blue: 0.86, alpha: 1.0).cgColor
-				// border.borderColor = UIColor.darkGray.cgColor
+        // border.borderColor = UIColor.darkGray.cgColor
         border.frame = CGRect(x: 0, y: activeField.frame.size.height - width,
                               width: activeField.frame.size.width, height: activeField.frame.size.height)
 
@@ -50,9 +50,9 @@ class StartSceneViewController: UIViewController {
         // Pass the selected object to the new view controller.
 
         if segue.identifier == "goCameraSegue" {
-						if let cameraController = segue.destination as? CameraController {
-							cameraController.enteredURL = activeField.text!
-						}
+            if let cameraController = segue.destination as? CameraController {
+                cameraController.enteredURL = activeField.text!
+            }
         }
     }
 
@@ -87,10 +87,10 @@ extension StartSceneViewController: UITextFieldDelegate {
         self.scrollView.isScrollEnabled = true
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-				let contentInsets = UIEdgeInsets(top: 0.0,
-																				 left: 0.0,
-																				 bottom: keyboardSize!.height + 20,
-																				 right: 0.0)
+        let contentInsets = UIEdgeInsets(top: 0.0,
+                                         left: 0.0,
+                                         bottom: keyboardSize!.height + 20,
+                                         right: 0.0)
 
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
@@ -108,10 +108,10 @@ extension StartSceneViewController: UITextFieldDelegate {
         //Once keyboard disappears, restore original positions
         var info = notification.userInfo!
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-			let contentInsets = UIEdgeInsets(top: 0.0,
-			                                 left: 0.0,
-			                                 bottom: -keyboardSize!.height,
-			                                 right: 0.0)
+        let contentInsets = UIEdgeInsets(top: 0.0,
+                                         left: 0.0,
+                                         bottom: -keyboardSize!.height,
+                                         right: 0.0)
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)
@@ -123,6 +123,6 @@ extension StartSceneViewController: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-			// activeField = nil
+        // activeField = nil
     }
 }
