@@ -223,7 +223,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash Scripts/ChangeKeeper.sh xcode 300 100";
+			shellScript = "bash bin/ChangeKeeper.sh xcode 300 100";
 		};
 		55F2E1BF522FC72356CA9F80 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
