@@ -12,13 +12,13 @@ import ARKit
 import WebKit
 
 class CameraController: UIViewController, ARSCNViewDelegate {
-
+    
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var overlay: UIView!
     @IBOutlet weak var overlayLabel: UILabel!
     
     var webView: WKWebView!
-    var shadowView : UIView!
+    var shadowView: UIView!
     
     let iPadFrameSize = CGRect(x: 0.0, y: 0.0, width: 768.0, height: 1024.0)
     
@@ -31,11 +31,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     
     var enteredURL: String = ""
     
-    var currentPlane:SCNNode? {
-        didSet {
-            
-        }
-    }
+    var currentPlane: SCNNode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +74,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         sceneView.scene = scene
     }
     
-    func loadImage()
-    {
+    func loadImage() {
         if enteredURL == "" {
             return
         }
@@ -94,22 +89,20 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         
         let location = sender.location(in: sceneView)
         debugPrint("location")
-        debugPrint(location);
+        debugPrint(location)
         
-        guard let _ = currentPlane else {
+        if currentPlane == nil {
             guard let newPlaneData = anyPlaneFrom(location: location) else { return }
             
             debugPrint("New plane data")
             debugPrint(newPlaneData)
-
+            
             lastPlaneNode?.removeFromParentNode()
             addIpad(node: newPlaneData.0, position: newPlaneData.1)
-            return
         }
-        
     }
     
-    private func anyPlaneFrom(location:CGPoint) -> (SCNNode, SCNVector3)? {
+    private func anyPlaneFrom(location: CGPoint) -> (SCNNode, SCNVector3)? {
         let results = sceneView.hitTest(location,
                                         types: ARHitTestResult.ResultType.existingPlaneUsingExtent)
         
@@ -125,7 +118,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     func addIpad(node: SCNNode, position: SCNVector3) {
         
         currentImage = screenShot()
-
+        
         if iPad != nil {
             node.addChildNode(iPad!)
         } else {
@@ -152,7 +145,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         let configuration = ARWorldTrackingConfiguration()
         
         configuration.planeDetection = .horizontal
-
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -169,7 +162,7 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         // Release any cached data, images, etc that aren't in use.
     }
     
-    func setupShadowView(){
+    func setupShadowView() {
         shadowView.frame = iPadFrameSize
         
         // Move out the screen
@@ -180,12 +173,10 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     
     // When a plane is detected, make a planeNode for it
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         lastAnchor = planeAnchor.identifier
         
         let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
-
         DispatchQueue.main.async {
             self.overlayLabel?.text = "Tap to place device"
         }
@@ -201,7 +192,6 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         
         lastPlaneNode = planeNode
         node.addChildNode(planeNode)
-        
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -231,11 +221,9 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         
         lastPlaneNode = planeNode
         node.addChildNode(planeNode)
-        
     }
     
     func screenShot() -> UIImage {
-        
         UIGraphicsBeginImageContextWithOptions(shadowView.frame.size, true, 1.0)
         
         let context = UIGraphicsGetCurrentContext()!
@@ -247,4 +235,3 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         return image!
     }
 }
-

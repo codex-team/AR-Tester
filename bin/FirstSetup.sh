@@ -64,8 +64,9 @@ if [ -f "Podfile" ]; then
   pod install
 else 
   echo "You haven't any Dependecies manager, which would you like to use?"
-  read -p "1) Carthage \n 2) Cocoapods " answer
-  case $answer in
+  echo -e "1) Carthage\n 2) Cocoapods" 
+  read -p " " answer
+  case  $answer in
   "1" ) installCarthage ;;
   "2" ) installCocoapods ;;
   esac
