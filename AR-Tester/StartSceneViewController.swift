@@ -15,7 +15,12 @@ class StartSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activeField.delegate = self
+        navigationController?.navigationBar.isHidden = true
         // Prepare view scroll scheme for corrent keyboard opening
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         registerForKeyboardNotifications()
     }
 
