@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga9-Sx-rqS">
-                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </arscnView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhI-mp-9eU" userLabel="OverlayView">
                                 <rect key="frame" x="30" y="688" width="315" height="60"/>
@@ -37,9 +37,13 @@
                                     <constraint firstItem="Sph-Bk-z4J" firstAttribute="centerX" secondItem="MhI-mp-9eU" secondAttribute="centerX" id="fwe-Bf-l4K"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GC8-Lj-XR0">
-                                <rect key="frame" x="30" y="40" width="32" height="32"/>
-                                <state key="normal" image="Back-button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2m-6T-d9D">
+                                <rect key="frame" x="10" y="44" width="12" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Path"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="bwe-ti-K4y" eventType="touchUpInside" id="GW6-Sr-8xF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,9 +55,9 @@
                             <constraint firstItem="vVS-8l-bfR" firstAttribute="trailing" secondItem="MhI-mp-9eU" secondAttribute="trailing" constant="30" id="RE6-C9-y4E"/>
                             <constraint firstItem="vVS-8l-bfR" firstAttribute="bottom" secondItem="MhI-mp-9eU" secondAttribute="bottom" constant="30" id="Rgy-ZP-LR1"/>
                             <constraint firstItem="ga9-Sx-rqS" firstAttribute="leading" secondItem="vVS-8l-bfR" secondAttribute="leading" id="Tvt-Hh-B6C"/>
-                            <constraint firstItem="GC8-Lj-XR0" firstAttribute="leading" secondItem="vVS-8l-bfR" secondAttribute="leading" constant="30" id="beY-bL-GSL"/>
-                            <constraint firstItem="ga9-Sx-rqS" firstAttribute="top" secondItem="vVS-8l-bfR" secondAttribute="top" id="cCy-RJ-pDO"/>
-                            <constraint firstItem="GC8-Lj-XR0" firstAttribute="top" secondItem="YDI-A0-Hyx" secondAttribute="top" constant="40" id="faU-Ao-2wE"/>
+                            <constraint firstItem="ga9-Sx-rqS" firstAttribute="top" secondItem="YDI-A0-Hyx" secondAttribute="top" id="guU-L9-kAG"/>
+                            <constraint firstItem="x2m-6T-d9D" firstAttribute="top" secondItem="vVS-8l-bfR" secondAttribute="top" id="ogt-gi-Yoc"/>
+                            <constraint firstItem="x2m-6T-d9D" firstAttribute="leading" secondItem="vVS-8l-bfR" secondAttribute="leading" constant="10" id="qoc-bF-K2h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vVS-8l-bfR"/>
                     </view>
@@ -66,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecb-cT-BQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354.39999999999998" y="286.50674662668666"/>
+            <point key="canvasLocation" x="-354.39999999999998" y="285.96059113300493"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yqG-8g-tGV">
@@ -184,7 +188,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back-button" width="32" height="32"/>
         <image name="Codex Logo" width="187" height="187"/>
+        <image name="Path" width="12" height="21"/>
     </resources>
 </document>

@@ -17,6 +17,10 @@ class CameraController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var overlay: UIView!
     @IBOutlet weak var overlayLabel: UILabel!
 
+    @IBAction func backButtonAction(_ sender: UIButton) {
+      navigationController?.popViewController(animated: true)
+    }
+
     var webView: WKWebView!
     var shadowView: UIView!
 
@@ -157,9 +161,8 @@ class CameraController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     func setupShadowView() {
