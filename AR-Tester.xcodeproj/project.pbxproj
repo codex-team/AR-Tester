@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236D22351FD04B4C0050D127 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236D22341FD04B4C0050D127 /* KeyboardHandler.swift */; };
 		62C72C025493CD7BF278804E /* libPods-AR-Tester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB964CD86DAE6957500DA1AA /* libPods-AR-Tester.a */; };
 		C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DB1F545435002BF34B /* AppDelegate.swift */; };
 		C21393DE1F545435002BF34B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393DD1F545435002BF34B /* art.scnassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		236D22341FD04B4C0050D127 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		2B16C0D3EC27696A7455BF75 /* Pods-AR-Tester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Tester.release.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Tester/Pods-AR-Tester.release.xcconfig"; sourceTree = "<group>"; };
 		97FFA548E22A16129B7B6B41 /* Pods-AR-Tester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Tester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Tester/Pods-AR-Tester.debug.xcconfig"; sourceTree = "<group>"; };
 		C21393D81F545435002BF34B /* AR-Tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 			children = (
 				C21393DB1F545435002BF34B /* AppDelegate.swift */,
 				C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */,
+				236D22341FD04B4C0050D127 /* KeyboardHandler.swift */,
 				C21393DD1F545435002BF34B /* art.scnassets */,
 				C21393DF1F545435002BF34B /* CameraController.swift */,
 				C21393E11F545435002BF34B /* Main.storyboard */,
@@ -268,6 +271,7 @@
 				C2FC140B1F5B6EEE00DBA490 /* StartSceneViewController.swift in Sources */,
 				C21393E01F545435002BF34B /* CameraController.swift in Sources */,
 				C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */,
+				236D22351FD04B4C0050D127 /* KeyboardHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
