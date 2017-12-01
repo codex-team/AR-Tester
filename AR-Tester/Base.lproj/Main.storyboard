@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iSG-zV-FHL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iSG-zV-FHL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,7 +70,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdB-0h-brR">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="QdB-0h-brR">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Codex Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qsi-wD-1F9">
@@ -124,6 +124,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="X4m-a1-sbU" secondAttribute="trailing" constant="30" id="15x-8s-Ykm"/>
                                     <constraint firstItem="1Wx-kV-nGX" firstAttribute="leading" secondItem="QdB-0h-brR" secondAttribute="leading" constant="30" id="8q7-bl-pDy"/>
@@ -138,6 +139,9 @@
                                     <constraint firstItem="Qsi-wD-1F9" firstAttribute="top" secondItem="QdB-0h-brR" secondAttribute="top" constant="125" id="scv-bm-2t5"/>
                                     <constraint firstItem="X4m-a1-sbU" firstAttribute="leading" secondItem="QdB-0h-brR" secondAttribute="leading" constant="30" id="zBC-Qu-Yms"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pxg-eE-b4d" appends="YES" id="lXX-tk-ECu"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.16470588235294117" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -151,11 +155,17 @@
                     </view>
                     <connections>
                         <outlet property="activeField" destination="X4m-a1-sbU" id="cRg-ih-yyd"/>
+                        <outlet property="bottomConstraint" destination="KEc-kd-lc0" id="LLh-Mr-ZAQ"/>
                         <outlet property="scrollView" destination="QdB-0h-brR" id="JVL-n6-YfZ"/>
                         <segue destination="bwe-ti-K4y" kind="showDetail" identifier="goCameraSegue" action="showViewController:sender:" id="EEn-n5-fae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1J-f8-d3S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pxg-eE-b4d">
+                    <connections>
+                        <action selector="tapGestureRecognizer:" destination="iSG-zV-FHL" id="Ac4-Vd-aMb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1206" y="287"/>
         </scene>
