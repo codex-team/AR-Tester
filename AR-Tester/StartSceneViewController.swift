@@ -57,15 +57,12 @@ class StartSceneViewController: UIViewController {
 
 extension StartSceneViewController: KeyboardHandlerDelegate {
     func keyboardStateChanged(input: UIView?, state: KeyboardState, info: KeyboardInfo) {
-        var scrollViewContentInsets = scrollView.contentInset
         var indicatorInsets = scrollView.scrollIndicatorInsets
 
         switch state {
         case .frameChanged, .opened:
-            let scrollViewBottomInset = info.endFrame.height - bottomConstraint.constant
-            print(info.endFrame.height)
-            let point = CGPoint(x: 0, y: scrollViewBottomInset)
-            scrollView.setContentOffset(point, animated: true)
+            let scrollViewBottomInset = info.endFrame.height
+            scrollView.contentInset.bottom = scrollViewBottomInset
             indicatorInsets.bottom = info.endFrame.height
         case .hidden:
             let point = CGPoint(x: 0, y: 0)
