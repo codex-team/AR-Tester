@@ -38,7 +38,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2m-6T-d9D">
-                                <rect key="frame" x="10" y="44" width="12" height="22"/>
+                                <rect key="frame" x="15" y="69" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ylp-ah-bwg"/>
+                                    <constraint firstAttribute="width" constant="30" id="zfy-SU-cao"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="Path"/>
                                 <connections>
@@ -56,8 +60,8 @@
                             <constraint firstItem="vVS-8l-bfR" firstAttribute="bottom" secondItem="MhI-mp-9eU" secondAttribute="bottom" constant="30" id="Rgy-ZP-LR1"/>
                             <constraint firstItem="ga9-Sx-rqS" firstAttribute="leading" secondItem="vVS-8l-bfR" secondAttribute="leading" id="Tvt-Hh-B6C"/>
                             <constraint firstItem="ga9-Sx-rqS" firstAttribute="top" secondItem="YDI-A0-Hyx" secondAttribute="top" id="guU-L9-kAG"/>
-                            <constraint firstItem="x2m-6T-d9D" firstAttribute="top" secondItem="vVS-8l-bfR" secondAttribute="top" id="ogt-gi-Yoc"/>
-                            <constraint firstItem="x2m-6T-d9D" firstAttribute="leading" secondItem="vVS-8l-bfR" secondAttribute="leading" constant="10" id="qoc-bF-K2h"/>
+                            <constraint firstItem="x2m-6T-d9D" firstAttribute="top" secondItem="vVS-8l-bfR" secondAttribute="top" constant="25" id="ogt-gi-Yoc"/>
+                            <constraint firstItem="x2m-6T-d9D" firstAttribute="leading" secondItem="vVS-8l-bfR" secondAttribute="leading" constant="15" id="qoc-bF-K2h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vVS-8l-bfR"/>
                     </view>
