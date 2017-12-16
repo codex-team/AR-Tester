@@ -61,7 +61,7 @@ extension StartSceneViewController: KeyboardHandlerDelegate {
 
         switch state {
         case .frameChanged, .opened:
-            let scrollViewBottomInset = info.endFrame.height
+            let scrollViewBottomInset = info.endFrame.height + 15
             scrollView.contentInset.bottom = scrollViewBottomInset
             indicatorInsets.bottom = info.endFrame.height
         case .hidden:
