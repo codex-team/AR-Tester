@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62C72C025493CD7BF278804E /* libPods-AR-Tester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB964CD86DAE6957500DA1AA /* libPods-AR-Tester.a */; };
+		2323BC941FBC465E00150A00 /* ARTesterProvisionProfile.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 2323BC931FBC465900150A00 /* ARTesterProvisionProfile.mobileprovision */; };
+		2323BC961FBC46DC00150A00 /* ARTesterProvProfile.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 2323BC951FBC46D500150A00 /* ARTesterProvProfile.mobileprovision */; };
 		C21393DC1F545435002BF34B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DB1F545435002BF34B /* AppDelegate.swift */; };
 		C21393DE1F545435002BF34B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393DD1F545435002BF34B /* art.scnassets */; };
 		C21393E01F545435002BF34B /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21393DF1F545435002BF34B /* CameraController.swift */; };
@@ -15,11 +16,15 @@
 		C21393E51F545435002BF34B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C21393E41F545435002BF34B /* Assets.xcassets */; };
 		C21393E81F545435002BF34B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C21393E61F545435002BF34B /* LaunchScreen.storyboard */; };
 		C2FC140B1F5B6EEE00DBA490 /* StartSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */; };
+		E2F866A9F57CA4F3422B8527 /* Pods_AR_Tester.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED34808670391CA6F793930 /* Pods_AR_Tester.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2323BC931FBC465900150A00 /* ARTesterProvisionProfile.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = ARTesterProvisionProfile.mobileprovision; sourceTree = "<group>"; };
+		2323BC951FBC46D500150A00 /* ARTesterProvProfile.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = ARTesterProvProfile.mobileprovision; sourceTree = "<group>"; };
 		2B16C0D3EC27696A7455BF75 /* Pods-AR-Tester.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Tester.release.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Tester/Pods-AR-Tester.release.xcconfig"; sourceTree = "<group>"; };
 		97FFA548E22A16129B7B6B41 /* Pods-AR-Tester.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AR-Tester.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AR-Tester/Pods-AR-Tester.debug.xcconfig"; sourceTree = "<group>"; };
+		AED34808670391CA6F793930 /* Pods_AR_Tester.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AR_Tester.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21393D81F545435002BF34B /* AR-Tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21393DB1F545435002BF34B /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		C21393DD1F545435002BF34B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -29,7 +34,6 @@
 		C21393E71F545435002BF34B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C21393E91F545435002BF34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2FC140A1F5B6EEE00DBA490 /* StartSceneViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = StartSceneViewController.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
-		DB964CD86DAE6957500DA1AA /* libPods-AR-Tester.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AR-Tester.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62C72C025493CD7BF278804E /* libPods-AR-Tester.a in Frameworks */,
+				E2F866A9F57CA4F3422B8527 /* Pods_AR_Tester.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +51,7 @@
 		17FA49B2321CECAFC53CB54D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DB964CD86DAE6957500DA1AA /* libPods-AR-Tester.a */,
+				AED34808670391CA6F793930 /* Pods_AR_Tester.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -89,6 +93,8 @@
 				C21393E11F545435002BF34B /* Main.storyboard */,
 				C21393E41F545435002BF34B /* Assets.xcassets */,
 				C21393E61F545435002BF34B /* LaunchScreen.storyboard */,
+				2323BC951FBC46D500150A00 /* ARTesterProvProfile.mobileprovision */,
+				2323BC931FBC465900150A00 /* ARTesterProvisionProfile.mobileprovision */,
 				C21393E91F545435002BF34B /* Info.plist */,
 			);
 			path = "AR-Tester";
@@ -158,6 +164,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2323BC961FBC46DC00150A00 /* ARTesterProvProfile.mobileprovision in Resources */,
+				2323BC941FBC465E00150A00 /* ARTesterProvisionProfile.mobileprovision in Resources */,
 				C21393DE1F545435002BF34B /* art.scnassets in Resources */,
 				C21393E81F545435002BF34B /* LaunchScreen.storyboard in Resources */,
 				C21393E51F545435002BF34B /* Assets.xcassets in Resources */,
@@ -411,7 +419,7 @@
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				INFOPLIST_FILE = "AR-Tester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = guryn.Codex;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codex.ar-tester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -427,7 +435,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "AR-Tester/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = guryn.Codex;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codex.ar-tester";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

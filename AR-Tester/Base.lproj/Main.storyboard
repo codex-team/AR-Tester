@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iSG-zV-FHL">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f5t-FD-RyL">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,17 +14,17 @@
             <objects>
                 <viewController title="AR Scene" id="bwe-ti-K4y" customClass="CameraController" customModule="AR_Tester" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YDI-A0-Hyx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga9-Sx-rqS">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </arscnView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhI-mp-9eU" userLabel="OverlayView">
-                                <rect key="frame" x="30" y="577" width="315" height="60"/>
+                                <rect key="frame" x="30" y="688" width="315" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move around to find a plane" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sph-Bk-z4J">
-                                        <rect key="frame" x="52" y="19.5" width="212.5" height="21"/>
+                                        <rect key="frame" x="51.999999999999986" y="19.666666666666629" width="212.66666666666663" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,6 +37,18 @@
                                     <constraint firstItem="Sph-Bk-z4J" firstAttribute="centerX" secondItem="MhI-mp-9eU" secondAttribute="centerX" id="fwe-Bf-l4K"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2m-6T-d9D">
+                                <rect key="frame" x="15" y="69" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ylp-ah-bwg"/>
+                                    <constraint firstAttribute="width" constant="30" id="zfy-SU-cao"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Path"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="bwe-ti-K4y" eventType="touchUpInside" id="GW6-Sr-8xF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -47,7 +59,9 @@
                             <constraint firstItem="vVS-8l-bfR" firstAttribute="trailing" secondItem="MhI-mp-9eU" secondAttribute="trailing" constant="30" id="RE6-C9-y4E"/>
                             <constraint firstItem="vVS-8l-bfR" firstAttribute="bottom" secondItem="MhI-mp-9eU" secondAttribute="bottom" constant="30" id="Rgy-ZP-LR1"/>
                             <constraint firstItem="ga9-Sx-rqS" firstAttribute="leading" secondItem="vVS-8l-bfR" secondAttribute="leading" id="Tvt-Hh-B6C"/>
-                            <constraint firstItem="ga9-Sx-rqS" firstAttribute="top" secondItem="vVS-8l-bfR" secondAttribute="top" id="cCy-RJ-pDO"/>
+                            <constraint firstItem="ga9-Sx-rqS" firstAttribute="top" secondItem="YDI-A0-Hyx" secondAttribute="top" id="guU-L9-kAG"/>
+                            <constraint firstItem="x2m-6T-d9D" firstAttribute="top" secondItem="vVS-8l-bfR" secondAttribute="top" constant="25" id="ogt-gi-Yoc"/>
+                            <constraint firstItem="x2m-6T-d9D" firstAttribute="leading" secondItem="vVS-8l-bfR" secondAttribute="leading" constant="15" id="qoc-bF-K2h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vVS-8l-bfR"/>
                     </view>
@@ -60,21 +74,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecb-cT-BQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354.39999999999998" y="286.50674662668666"/>
+            <point key="canvasLocation" x="-354.39999999999998" y="285.96059113300493"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yqG-8g-tGV">
+            <objects>
+                <navigationController id="f5t-FD-RyL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8CC-sb-fmo">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="iSG-zV-FHL" kind="relationship" relationship="rootViewController" id="1xJ-WV-VKq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j65-iU-vfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2058" y="287"/>
         </scene>
         <!--StartScreen-->
         <scene sceneID="nep-o9-RfR">
             <objects>
                 <viewController title="StartScreen" id="iSG-zV-FHL" customClass="StartSceneViewController" customModule="AR_Tester" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AKd-LV-qIx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdB-0h-brR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Codex Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qsi-wD-1F9">
-                                        <rect key="frame" x="93.5" y="125" width="188" height="188"/>
+                                        <rect key="frame" x="93.666666666666686" y="125" width="188" height="188"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="188" id="8jD-vD-Xj7"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="188" id="PWJ-CV-z8d"/>
@@ -149,6 +179,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="brm-PL-sce"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Qa8-b4-MYb"/>
                     <connections>
                         <outlet property="activeField" destination="X4m-a1-sbU" id="cRg-ih-yyd"/>
                         <outlet property="scrollView" destination="QdB-0h-brR" id="JVL-n6-YfZ"/>
@@ -162,5 +193,6 @@
     </scenes>
     <resources>
         <image name="Codex Logo" width="187" height="187"/>
+        <image name="Path" width="12" height="21"/>
     </resources>
 </document>
